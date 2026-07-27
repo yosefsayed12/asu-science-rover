@@ -1,0 +1,10 @@
+/* font-family: "Cairo", sans-serif; 
+    <weight>: Use a value from 200 to 1000
+    <uniquifier>: Use a unique and descriptive class name
+    */
+@import
+url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Cairo:wght@200..1000&display=swap');
+
+body {
+    font-family: "Cairo", sans-serif;
+}
