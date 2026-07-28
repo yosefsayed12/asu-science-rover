@@ -5,19 +5,22 @@
 body{
     background-color: #0F081A;    
     color: #FFFFFF;
+    /* height: 3000px; */
 }
+
+
 
 main .hero{
     height: 100vh;
     position: relative;
-    
+    margin-bottom: 5%;
 }
 
 .hero::before{
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(58, 28, 113, 0.6);
+    background: rgb(16 4 38 / 60%);
 }
 
 main .hero img{
@@ -34,7 +37,7 @@ main .hero img{
     right: 5%;
 }
 
-.scout {
+#scout {
     font-size: 4em;
     margin-bottom: -10%;
 }
@@ -51,10 +54,106 @@ main .hero img{
     padding: 3px;
     border-right: 2px solid #F4C430;
 }
-/* footer img {
-    position: fixed;
-    right: 30px;
-    bottom: 20px;
-    width: 3%;
-    height: 4%;
+
+/* #join {
+    margin-right: 50%;
+}
+
+#join::after{
+    content: "  ◀️";
 } */
+
+#about{
+    width: 100%;
+    position: relative;
+}
+#about-title::before{
+    content: "⚜️   ";
+    color: #F4C430;
+}
+
+#about-content{
+    margin: 1% 20% 0;
+
+}
+
+#about-title, .title-leader{
+    text-align: center;
+    margin-bottom: 1%;
+    font-size: 2em;
+}
+
+.para{
+    line-height: 2;
+}
+
+#about::after{
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 2px;
+    background-color: #F4C430;
+    bottom: -10%;
+    right: 15%;
+}
+
+#team-leader{
+    margin-top: 5%;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid #F4C430;
+    width: 100%;
+    background-color: #05020a;
+}
+
+footer > *{
+    flex: 1;
+}
+
+
+.right-secttion, .mid-right, .mid-left, .left{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+}
+
+.mid-right, .mid-left, .left{
+    font-size: 15px;
+    margin-top: 2%;
+    border-right: 2px solid rgb(41, 39, 39);
+}
+
+
+.left p{
+    margin-left: 20%;
+}
+
+.mid-left .e-mail{
+    margin-top: 3%;
+}
+
+.left a, .mid-left .e-mail{
+    font-size: 12px;
+}
+footer .right-secttion img {
+    width: 100px;
+    height: 100px;
+}
+
+.right-secttion .uni1 {
+    color: #F4C430;
+}
+
+.left a:hover, .e-mail span:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.footerpara{
+    color: gray;
+}
