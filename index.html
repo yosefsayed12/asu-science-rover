@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASU-ScienceRover</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <script src="js/main.js"></script>
+    
+
     <!-- <style>
          /* body{
             background-color: #5E3A9E;
@@ -15,37 +22,73 @@
          } 
         */
     </style> -->
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/nav.css">
-    <script src="js/main.js"></script>
-    
 </head>
 <body>
     <header>
         <nav>
             <img src="assets/images/SCOUT.png" alt="scienceRoverLogo">
-            <a href="#">الرئيسية</a>
-            <a href="#">من نحن</a>
+            <a href="#ama">الرئيسية</a>
+            <a href="#about-content">من نحن</a>
             <a href="#">فريق القيادة</a>
             <a href="#">الأنشطة</a>
-            <a href="/contact">تواصل معنا</a>
+            <a href="#contact">تواصل معنا</a>
             <button>انضم الينا</button>
         </nav>
     </header>
     <main>
         <section class="hero">
-            <!-- <img src="assets/images/hero.jpg" alt="photo"> -->
+            <img id="ama" src="assets/images/My ChatGPT image.png" alt="photo">
             <div class="hero-content">
-                <p class="scout">عشيرة جوالة</p>
+                <p id="scout">عشيرة جوالة</p>
                 <p class="clan-name">كلية العلوم</p>
                 <p class="uni">جامعة عين شمس</p>
                 <p class="qoute">نبني القادة... ونخدم المجتمع</p>
+                <!-- <button id="join">انضم الينا</button> -->
             </div>
+        </section>
+        <section id="about">
+            <div id="about-content">
+                <p id="about-title">من نحن</p>
+                <p class="para">عشيرة جوالة كلية العلوم بجامعة عين شمس هي نشاط طلابي تابع للجنة الجوالة والخدمة العامة باتحاد طلاب 
+                كلية العلوم، يهدف إلى إعداد جيل من الشباب يمتلك روح القيادة والعمل الجماعي والمسؤولية المجتمعية من خلال الأنشطة الكشفية والتطوعية والخدمية. تستند العشيرة إلى مبادئ الحركة الكشفية، وتسعى إلى تنمية مهارات أعضائها وصقل شخصياتهم ليكونوا عناصر مؤثرة في مجتمعهم. 
+                </p>
+            </div>
+        </section>
+        <section id="team-leader">
+            <p class="title-leader">فريق القيادة</p>
         </section>
     </main>
     <footer id = "contact">
-        <!-- <a href=""> <img src="assets/icons/arrow.png" alt=""> </a> -->
+       <div class="right-secttion">
+        <img src="assets/images/SCOUT.png" alt="logo">
+            <p>عشيرة جوالة كلية العلوم</p>
+            <p class="uni1">جامعة عين شمس</p>
+            <p class="footerpara">جميع الحقوق محفوظة &copy 2026</p>
+       </div>
+       <div class="mid-right">
+            <p>تابعنا</p>
+            <div class="scoile">
+                <i class="fa-brands fa-youtube"></i> 
+                <i class="fa-brands fa-facebook"></i>
+                
+            </div>
+       </div>
+       <div class="mid-left">
+            <p>تواصل معنا</p>
+            <div class="e-mail"><i class="fa-solid fa-envelope"></i><span> sciencerover@gmail.com</span>
+                <p><i class="fa-solid fa-location-dot"></i><a href="#"> <span> كلية العلوم-جامعة عين شمس </span></a></p>
+            </div>
+           
+        </div>
+       <div class="left">
+        <p>روابط سريعة</p>
+            <ul>
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="#">من نحن</a></li>
+                <li><a href="#">فريق القيادة</a></li>
+                <li><a href="#">الأنشظة</a></li>
+            </ul>
+       </div>
     </footer>
 
  
