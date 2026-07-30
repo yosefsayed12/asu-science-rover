@@ -2,6 +2,11 @@
     margin: 0;
     padding: 0;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     background-color: #0F081A;    
     color: #FFFFFF;
@@ -20,7 +25,7 @@ main .hero{
     content: "";
     position: absolute;
     inset: 0;
-    background: rgb(16 4 38 / 60%);
+    /* background: rgb(16 4 38 / 60%); */
 }
 
 main .hero img{
@@ -77,10 +82,12 @@ main .hero img{
 
 }
 
-#about-title, .title-leader{
+#about-title, .title-leader, .title-activity{
     text-align: center;
-    margin-bottom: 1%;
-    font-size: 2em;
+    margin-bottom: 3%;
+    font-size: 2.5rem;
+    font-weight: 700;
+    /* color: #F4C430; */
 }
 
 .para{
@@ -157,3 +164,95 @@ footer .right-secttion img {
 .footerpara{
     color: gray;
 }
+
+.scoile i:hover {
+    cursor: pointer;
+}
+
+.scoile i{
+    font-size: 20px;
+}
+
+.scoile {
+    display: flex;
+    gap: 30px;
+    margin-top: 10%;
+}
+
+#activity{
+    background-color: #1E1530;
+    border-top: 1px solid #F4C430;
+    border-bottom: 1px solid #F4C430;
+    padding: 1%;
+}
+
+.type-of-activities{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px
+}
+
+.type-of-activities > *{
+    flex: 1;
+}
+
+.act{
+    /* background-color: #0F081A; */
+    background-color: #181126;
+    /* background-color: #2A1E45; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    border: 1px solid rgba(244, 196, 48, 0.12);
+    transition: 0.3s;
+    padding: 35px;
+    position: relative;
+}
+
+.act:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border-color: #F4C430;
+}
+
+.type-of-activities i {
+    font-size: 48px;
+    position: absolute;
+    top: -20px;
+}
+
+.type-of-activities p {
+    color: #F4C430;
+    margin: 25px;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.type-of-activities span{
+    font-size: 16px;
+    line-height: 2;
+    color: #D8D8D8;
+}
+
+.title-leader::after, .title-activity::after{
+    content: "";
+    position: absolute;
+    margin-top: -5px;
+    right: 45%;
+    display: block;
+    height: 1px;
+    width: 10%;
+    background-color:#F4C430;
+}
+/* for outline logo in background
+ .outline-photo{
+    z-index: -99;
+    position: absolute;
+    width: 100%;
+    opacity: .08;
+    overflow: hidden;
+    top: 30%;
+    
+} */
+
