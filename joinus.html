@@ -6,40 +6,96 @@
     <title>Join-US</title>
     <link rel="stylesheet" href="css/fonts.css">
     <style>
-        body{
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
+
+        body{
+            min-height: 100vh;
+
+        }
+
         .container{
             display: flex;
-            height: 100vh;
+            min-height: 100vh;
         }
 
-        .left{
+        .left-side, .right-side{
             flex: 1;
-            background-color: #0F081A;
-            
         }
 
-        .right{
-            flex: 1.5;
-            background-color: #211736;
-            border-left: 2px solid #C7921B;
+        .left-side{
+            background: linear-gradient(135deg,#0F081A,#1E1530);
+            color:white;
+
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            padding:60px;
         }
-        
-        .left img{
-            right: 50%;
-            top: 50%;
-            width: 600px;
-            opacity: .5;
+
+        .right-side{
+            background:#ffffff;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            padding:60px;
+        }
+
+        .left-side{
+            flex: 1;
+            position: relative;
+            background-image: url("assets/images/joinphoto.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .left-side::before{
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(15,8,26,.65),
+                rgba(15,8,26,.85)
+            );
+        }
+
+        .left-content{
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .left-content img{
+            width: 800px;
+        }
+
+        .right-side h1{
+            font-size: 10rem;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="right"></div>
-        <div class="left">
-            <img src="assets/images/outlinephoto.jpg" alt="">
+        <div class="right-side">
+            <h1>الانضمام مغلق حاليا :)</h1>
+        </div>
+        <div class="left-side">
+            <div class="left-content">
+                <img src="assets/images/SCOUT.png" alt="clan's logo">
+            </div>
         </div>
     </div>
 </body>
