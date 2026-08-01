@@ -231,7 +231,7 @@ footer .right-secttion img {
     /* color: #F4C430; */
     color: #C7921B;
     margin: 25px;
-    font-size: 25px;
+    font-size: 1.5rem; /* == 25px*/
     font-weight: 700;
 }
 
@@ -279,7 +279,7 @@ footer .right-secttion img {
 
 .comit-logo{
     position: absolute;
-    width: 40%;
+    width: 7rem;
     top: -35px;
     border-radius: 100px;
     border: 1px solid #0F081A;
