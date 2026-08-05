@@ -1,5 +1,5 @@
 nav {
-    height: 80px;
+    height: px;
     width: 100%;
     border-bottom: 1px solid #F4C430;
     display: flex;
@@ -32,8 +32,9 @@ button {
     margin-left: 1%;
     font-size: 16px;
     font-weight: 500;
-    border-radius: 5px;
+    border-radius: 10px;
     font-family: "Cairo", sans-serif;
+    transition: all 0.3s ease;
 }
 
 button:hover, nav a:hover{

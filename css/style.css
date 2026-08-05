@@ -212,6 +212,7 @@ footer .right-secttion img {
     padding: 35px;
     position: relative;
     margin-bottom: 2%;
+    transition: transform .3s ease, box-shadow .3s ease;
 }
 
 .act:hover{
@@ -257,6 +258,7 @@ footer .right-secttion img {
     border-top: 2px solid #F4C430;
     border-bottom: 2px solid #F4C430;
     padding: 1%;
+    
 }
 
 .comit{
@@ -269,6 +271,7 @@ footer .right-secttion img {
     border-radius: 15px;
     transition: .3s;
     position: relative;
+    transition: transform .3s ease, box-shadow .3s ease;
 }
 
 .comit:hover{
@@ -279,7 +282,7 @@ footer .right-secttion img {
 
 .comit-logo{
     position: absolute;
-    width: 7rem;
+    width: 6rem;
     top: -35px;
     border-radius: 100px;
     border: 1px solid #0F081A;
@@ -297,3 +300,17 @@ footer .right-secttion img {
     
 } */
 
+#comittee, #about, #activity{
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.now-more{
+    margin-top: 1%;
+    width: 12rem;
+    transform-style: flat;
+}
+
+.now-more::after{
+    content: " ==>";
+}
