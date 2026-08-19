@@ -62,6 +62,7 @@
 
         <section id="activity">
             <p class="title-activity">الأنشطة</p>
+            <span class="scout-icon">⚜️</span> 
             <div class="type-of-activities">
                 <div class="act dini">
                     <i class="fa-solid fa-person-praying"></i>
@@ -93,32 +94,42 @@
             <img src="assets/images/outlinephoto.jpg" alt="">
         </div> -->
         <section id="comittee">
+            <span class="scout-icon"></span>
             <p class="comittee-title">اللجان النوعية</p>
             <div class="type-of-comittee">
                 <div class="comit media">
                   <p>لجنة الميديا</p>
                   <img class="comit-logo" src="assets/images/media-comittee.png" alt="">
-                    <span>تتولى لجنة الميديا توثيق أنشطة وفعاليات العشيرة من خلال التصوير، والتصميم، وكتابة المحتوى، وإنتاج المواد الإعلامية.
-                         كما تساعد أعضاءها على تنمية مهاراتهم الإبداعية والعديد من الـ Soft Skills التي تؤهلهم للعمل ضمن فريق باحترافية.
+                    <span>
+                        تختص بتوثيق أنشزة العشيرة وانتاج المحتوى الاعلامي، وتنمية مهارات الاعضاء الابداعية
                     </span>
+                    <br> <br>
+                    <button class="more-btn" 
+                        data-committee ="media">عرض المزيد</button>
                  </div>
                  <div class="comit hr">
                      <img class="comit-logo" src="assets/images/media-comittee.png" alt="">
                      <p>لجنة السكرتارية</p>
-                     <span>تهتم لجنة السكرتارية بمتابعة الأعضاء،
-                         وتنظيم العمل، وتعزيز التواصل داخل العشيرة. كما تساهم في تنمية مهارات التواصل، والعمل الجماعي، وحل المشكلات، وغيرها من الـ Soft Skills التي تدعم دور العضو داخل اللجنة.</span>
+                     <span>تهتم بتنزيم اعمال العشيرة ومتابعة الاعضاء والبيانات، وتعزيز التواصل والتنسيق بين مختلف اللجان</span>
+                     <br>
+                     <button class="more-btn" 
+                        data-committee ="hr">عرض المزيد</button>
                 </div>
                 <div class="comit pr">
                     <img class="comit-logo" src="assets/images/media-comittee.png" alt="">
                     <p>لجنة الخدمة العامة</p>
-                    <span>تعمل اللجنة على تنظيم المبادرات والخدمات المجتمعية، وبناء العلاقات مع الجهات المختلفة،
-                         والتعريف بأنشطة العشيرة. كما تمنح أعضاءها فرصة لتطوير مهارات التواصل، والتنظيم، والتخطيط، وغيرها من الـ Soft Skills اللازمة لنجاح العمل.</span>
+                    <span>تعمل على تنظيم المبادرات والانشطة التطوعية والمساهمة في خدمة المجتمع وتنمية روح العطاء لدى الافراد</span>
+                    <br>
+                    <button class="more-btn" 
+                        data-committee ="pr">عرض المزيد</button>
                 </div>
                  <div class="comit finan">
                     <img class="comit-logo" src="assets/images/media-comittee.png" alt="">
                     <p>لجنة الصندوق والعهدة</p>
-                    <span>تتولى لجنة الصندوق والعهدة إدارة الموارد المالية والعهد
-                         الخاصة بالعشيرة، مع الحرص على تنظيمها والمحافظة عليها. كما تساعد أعضاءها على اكتساب مهارات تحمل المسؤولية، والتنظيم، والدقة، والعديد من الـ Soft Skills التي تدعم كفاءة العمل.</span>
+                    <span>تختص بادارة الموارد المالية والعهد الخاصة بالعشيرة، وتنظيمها والمحافظة عليها بما يضمن حسن استخدامها.</span>
+                    <br>
+                    <button class="more-btn" 
+                        data-committee ="finan">عرض المزيد</button>
                 </div>
         </div>
         </section>
@@ -135,6 +146,7 @@
             <div class="scoile">
                 <i class="fa-brands fa-youtube"></i> 
                 <i class="fa-brands fa-facebook" id="facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
             </div>
        </div>
        <div class="mid-left">
@@ -155,6 +167,24 @@
        </div>
     </footer>
 
+    <div class="modal" id="comitteeModal">
+        <div class="modal-content">
+
+            <button class="close-btn" id = "closeModal"> x </button>
+            
+            <h2 id = "modalTitle"></h2>
+
+            <p id="modalDescription"></p>
+
+            <h3>أهم المهام</h3>
+
+            <ul id = "modalTasks"></ul>
+
+            <h3>المهارات التي يكتسبها العضو</h3>
+
+            <p id = "modalSkills"></p>
+        </div>
+    </div>
     <script src="js/main.js"></script>
 </body>
 </html>

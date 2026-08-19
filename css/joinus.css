@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join-US</title>
-    <link rel="stylesheet" href="css/fonts.css">
-    <!-- <link rel="stylesheet" href="css/joinus.css"> -->
-    <style>
-        * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -93,19 +84,3 @@ body{
 p {
     color: darkgoldenrod;
 }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="right-side">
-            <h1>الانضمام مغلق حاليا :)</h1>
-        </div>
-        <div class="left-side">
-            <div class="left-content">
-                <img src="assets/images/SCOUT.png" alt="clan's logo">
-                <p>كٌــن جــزءاً مــن فريــق، كٌــن انــت</p>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
