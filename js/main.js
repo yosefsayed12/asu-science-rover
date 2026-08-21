@@ -64,10 +64,16 @@ moreButtons.forEach(button => {
         modalDescription.textContent = committee.description;
         modalTasks.innerHTML = "";
 
+        let i = 1;
         committee.tasks.forEach(task => {
-            const li = document.createElement("li");
-            li.textContent = task;
-            modalTasks.appendChild(li);
+            const span = document.createElement("span");
+            span.classList.add("modalSpan");
+            span.textContent = task;
+            modalTasks.appendChild(span);
+            // if(i===2){
+            //     modalTasks.appendChild(document.createElement("br"));
+            // }
+            i++;
         });
 
         modalSkills.textContent = committee.skills;

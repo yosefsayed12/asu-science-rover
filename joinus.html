@@ -22,14 +22,6 @@ body{
     height: 100vh;
 }
 
-.right-side{
-    flex: 1.5;
-}
-
-.left-side{
-    flex: 1;
-}
-
 .left-side{
     background: linear-gradient(135deg,#0F081A,#1E1530);
     color:white;
@@ -43,11 +35,10 @@ body{
 }
 
 .right-side{
+    padding: 50px;
+    flex: 1.75;
     background-color: lemonchiffon;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:60px;
+    /* padding:60px; */
 }
 
 .left-side{
@@ -86,7 +77,7 @@ body{
     width: 250px;
 }
 
-.right-side h1{
+.right-side .msg{
     font-size: 3rem;
 }
 
@@ -98,7 +89,16 @@ p {
 <body>
     <div class="container">
         <div class="right-side">
-            <h1>الانضمام مغلق حاليا :)</h1>
+            <!-- <h1 class="msg">الانضمام مغلق حاليا :)</h1> -->
+            <h1>الانضمام لعشيرة جوالة كلية العلوم - <br> جامعة عين شمس ⚜️ </h1>
+
+            <form action="">
+                <input type="text" name="username">
+                <input type="text" name="phoneNum">
+                <input type="text" name="stuedentLevel">
+                <input type="text" name="stuedentprogram">
+                <button>الانضمام</button>
+            </form>
         </div>
         <div class="left-side">
             <div class="left-content">
