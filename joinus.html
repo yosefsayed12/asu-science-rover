@@ -13,25 +13,25 @@
     box-sizing: border-box;
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 body{
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
 }
 
 .container{
     display: flex;
-    height: 100vh;
-}
-
-.left-side{
-    background: linear-gradient(135deg,#0F081A,#1E1530);
-    color:white;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:60px;
+    min-height: 100vh;
+    height: auto;
 }
 
 .right-side{
@@ -39,19 +39,28 @@ body{
     flex: 1.75;
     background-color: lemonchiffon;
     /* padding:60px; */
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .left-side{
     flex: 1;
     position: relative;
+    background: linear-gradient(135deg,#0F081A,#1E1530);
     background-image: url("assets/images/joinphoto.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
+    flex-direction:column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    color:white;
+    text-align:center;
+    padding:60px;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .left-side::before{
@@ -84,20 +93,129 @@ body{
 p {
     color: darkgoldenrod;
 }
+
+.right-side {
+    width: 50%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 80px;
+    box-sizing: border-box;
+    background-color: #F7F2D0;
+}
+
+.right-side h1 {
+    width: 100%;
+    max-width: 650px;
+    text-align: center;
+    font-size: 32px;
+    line-height: 1.5;
+    color: #171126;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 2px solid rgb(8, 2, 29);
+}
+
+.right-side form {
+    width: 100%;
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.form-group label {
+    font-size: 17px;
+    font-weight: bold;
+
+    color: #171126;
+
+    text-align: right;
+}
+
+.form-group input {
+    width: 100%;
+    height: 48px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    border: 2px solid #d4d0a5;
+    border-radius: 8px;
+    background-color: white;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #6b4bb3;
+    box-shadow: 0 0 0 3px rgba(107, 75, 179, 0.15);
+}
+
+.right-side button {
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #6b4bb3;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.right-side button:hover {
+    background-color: #51378c;
+    transform: translateY(-2px);
+}
+
+.erorr {
+    font-size: 10px;
+    color: red;
+}
     </style>
 </head>
 <body>
     <div class="container">
         <div class="right-side">
             <!-- <h1 class="msg">الانضمام مغلق حاليا :)</h1> -->
-            <h1>الانضمام لعشيرة جوالة كلية العلوم - <br> جامعة عين شمس ⚜️ </h1>
+            <h1>الانضمام لعشيرة جوالة كلية العلوم  <br> جامعة عين شمس ⚜️ </h1>
 
-            <form action="">
-                <input type="text" name="username">
-                <input type="text" name="phoneNum">
-                <input type="text" name="stuedentLevel">
-                <input type="text" name="stuedentprogram">
-                <button>الانضمام</button>
+            <form id="join-form">
+                <div class="form-group">
+                    <label>الاسم</label>
+                    <input type="text" id="name">
+                    <span class="erorr" id="nameErorr"></span>
+                </div>
+        
+                <div class="form-group">
+                    <label>رقم التليفون</label>
+                    <input type="text" id="phone">
+                    <span class="erorr" id="phoneErorr"></span>
+                </div>
+        
+                <div class="form-group">
+                    <label>الفرقة</label>
+                    <input type="text" id="level">
+                    <span class="erorr" id="levelErorr"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>البريد الإلكتروني</label>
+                    <input type="email" id="email">
+                    <span class="erorr" id="emailErorr"></span>
+                </div>
+
+                <button type="submit">الانضمام</button>
             </form>
         </div>
         <div class="left-side">
@@ -107,5 +225,7 @@ p {
             </div>
         </div>
     </div>
+
+    <script src="js/join.js" type="module"></script>
 </body>
 </html>
