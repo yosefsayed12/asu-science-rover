@@ -17,24 +17,27 @@ const committees = {
 
         tasks: ["تصوير ونوثيق انشطة وفعاليات العشيرة.",
                 "تصميم المنشورات والمحتوى البصري",
-                "كتابة وتجهيز المحتوى الاعلامي ادارة المحتوى الخاص بوسائل التواصل",
-                "ابراز انشطة وانجازات العشيرة"],
+                " تجهيز المحتوى الاعلامي وادارة المحتوى الخاص بوسائل التواصل",
+                " ابراز انشطة وانجازات العشيرة على وسائل التواصل"],
 
-        skills: "التصوير * التصميم * كتابة المحتوى * العمل الجماعي * الابداع"
+        skills: "التصوير - التصميم - كتابة المحتوى - العمل الجماعي - الابداع"
     },
 
     hr: {
-        title: "",
+        title: "لجنة السكرتارية",
 
-        description: "",
+        description: "مسؤولة عن ",
 
-        tasks: [],
+        tasks: ["متابعة وتقييم اعضاء العشيرة",
+                "تسجيل احتايجات الرهط",
+                "متابعة وتقييم اعضاء العشيرة",
+                "متابعة وتقييم اعضاء العشيرة",],
 
-        skills: ""
+        skills: "التواصل - حل المشكلات"
     },
 
     pr: {
-        title: "",
+        title: "لجنة الخدمة العامة",
 
         description: "",
 
@@ -44,13 +47,16 @@ const committees = {
     },
 
     finan: {
-        title: "",
+        title: "لجنة الصندوق والعهدة",
 
-        description: "",
+        description: "مسؤولة عن ادارة الموارد المالية والعهدة الخاصة بالعشيرة، وتنظيم المصروفات والحفاظ على الممتلكات",
 
-        tasks: [],
+        tasks: ["تسجيل ومتابعة المصروفات",
+                "تنظيم ميزانية الانشطة والفعاليات",
+                "الحفاظ على العهدة وممتلكات العشيرة",
+                "اعداد ومراجعة السجلات المالية"],
 
-        skills: ""
+        skills: "ادارة المال - ادارة المال"
     }
 };
 
@@ -59,6 +65,8 @@ moreButtons.forEach(button => {
 
         const committeeName = button.dataset.committee;
         const committee = committees[committeeName];
+
+        document.body.classList.add("modal-open");
 
         modalTitle.textContent = committee.title;
         modalDescription.textContent = committee.description;
@@ -83,6 +91,7 @@ moreButtons.forEach(button => {
 
 closeModal.addEventListener("click", () => {
     modal.style.display = "none";
+    document.body.classList.remove("modal-open");
 })
 facebook.addEventListener("click", () => {
     console.log("Clicked!");
@@ -91,4 +100,31 @@ facebook.addEventListener("click", () => {
 
 btn.addEventListener("click", () => {
     window.location.href = "joinus.html";
+});
+
+//====================================================================
+
+const successPop = document.getElementById("successPopup");
+const closePop = document.getElementById("closePopup");
+
+if(localStorage.getItem("joinSuccess") === "true"){
+    successPop.style.display = "block";
+    localStorage.removeItem("joinSuccess");
+}
+
+closePop.addEventListener('click', () => {
+    successPop.style.display = "none";
+})
+
+//========================================================================
+
+const menuBtn = document.getElementById("menu-btn");
+const navLinks = document.querySelector(".nav-links");
+
+console.log(menuBtn);
+console.log(navLinks.children);
+
+menuBtn.addEventListener("click", () => {
+    console.log("clicked");
+    navLinks.classList.toggle("active");
 });

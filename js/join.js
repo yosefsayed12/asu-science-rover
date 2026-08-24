@@ -15,7 +15,7 @@ const level = document.querySelector("#level");
 form.addEventListener("submit", (e) =>{
     e.preventDefault();
     
-    document.querySelectorAll('.error').forEach(el => el.textContent = '');
+    document.querySelectorAll('.erorr').forEach(el => el.textContent = '');
     document.querySelectorAll('input').forEach(input => input.style.borderColor = '');
     let isValid = true;
 
@@ -73,7 +73,10 @@ form.addEventListener("submit", (e) =>{
     };
     console.log(formData);
     form.submit();
-    form.reset();
+    localStorage.setItem("joinSuccess", "true");
+    window.location.href = "index.html";
     }
+
+
 });
 // =========================
