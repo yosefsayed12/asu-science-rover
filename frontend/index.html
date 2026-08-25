@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASU-ScienceRover</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+
+    <!-- <style>
+         /* body{
+            background-color: #5E3A9E;
+            background-color:#F4C430;
+            background-color: #0F081A;
+            color: #FFFFFF;
+            color: #BDBDBD;
+            
+         } 
+        */
+    </style> -->
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="assets/images/SCOUT.png" alt="scienceRoverLogo">
+        <div class="nav-links">
+            <a href="#ama">الرئيسية</a>
+            <a href="#about-content">من نحن</a>
+            <a href="#team-leader">المعرض</a>
+            <a href="#activity">الأنشطة</a>
+            <a href="#comittee">اللجان النوعية</a>
+            <a href="#contact">تواصل معنا</a>
+        </div>
+            <button id="join-us">انضم الينا</button>
+            <button id="menu-btn">☰</button>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <img id="ama" src="assets/images/photo_2026-07-29_22-15-42.jpg" alt="photo">
+            <div class="popup" id="successPopup">
+                <p>تم تعبئة الكرش بنجاح</p>
+                <button id = "closePopup">تمام</button>
+            </div>
+            <div class="hero-content">
+                <p id="scout">عشيرة جوالة</p>
+                <p class="clan-name">كلية العلوم</p>
+                <p class="uni">جامعة عين شمس</p>
+                <p class="qoute">نبني القادة... ونخدم المجتمع</p>
+                <a href="#about-content"><button class="now-more">اعرف أكتر</button></a>
+                <!-- <button id="join">انضم الينا</button> -->
+            </div>
+        </section>
+        <section id="about">
+            <div id="about-content">
+                <p id="about-title">من نحن</p>
+                <p class="para">عشيرة جوالة كلية العلوم بجامعة عين شمس هي نشاط طلابي تابع للجنة الجوالة والخدمة العامة باتحاد طلاب 
+                كلية العلوم، يهدف إلى إعداد جيل من الشباب يمتلك روح القيادة والعمل الجماعي والمسؤولية المجتمعية من خلال الأنشطة الكشفية والتطوعية والخدمية. تستند العشيرة إلى مبادئ الحركة الكشفية، وتسعى إلى تنمية مهارات أعضائها وصقل شخصياتهم ليكونوا عناصر مؤثرة في مجتمعهم. 
+                </p>
+            </div>
+        </section>
+        <section class="gallery" id="gallery">
+
+    <div class="section-title">
+        <h2>المعرض</h2>
+        <p>لحظات جميلة من رحلتنا معًا</p>
+    </div>
+
+    <div class="gallery-container">
+
+        <!-- Right Arrow -->
+        <button class="gallery-btn right-btn">&#10094; </button>
+
+        <div class="gallery-card">
+            <img src="assets/images/sea-day.jpg" alt="اليوم البحري">
+
+            <div class="gallery-overlay">
+                <h3>اليوم البحري</h3>
+                <p>
+                    يوم مليء بالأنشطة والمغامرات
+                    على شاطئ البحر
+                </p>
+                <a href="gallery-details.html" class="gallery-details">
+                    عرض التفاصيل
+                </a>
+            </div>
+        </div>
+
+        <button class="gallery-btn left-btn">&#10095;</button>
+
+    </div>
+
+    
+    <div class="gallery-dots">
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    
+    <div class="gallery-events">
+        <div class="event active">
+            <span>⛵</span>
+            <p>اليوم البحري</p>
+        </div>
+        <div class="event">
+            <span>🏕️</span>
+            <p>حفل بداية النشاط</p>
+        </div>
+        <div class="event">
+            <span>🏆</span>
+            <p>حفل التسليم</p>
+        </div>
+        <div class="event">
+            <span>🎨</span>
+            <p>تلوين جدار العشيرة</p>
+        </div>
+        <div class="event">
+            <span>❤️</span>
+            <p>يوم الخير</p>
+        </div>
+        <div class="event">
+            <span>🌙</span>
+            <p>افطار العشيرة</p>
+        </div>
+        <div class="event">
+            <span>⛺️</span>
+            <p>معسكر العشيرة</p>
+        </div>
+    </div>
+</section>
+
+        <section id="activity">
+            <p class="title-activity">الأنشطة</p>
+            <span class="scout-icon">⚜️</span> 
+            <div class="type-of-activities">
+                <div class="act dini">
+                    <i class="fa-solid fa-person-praying"></i>
+                    <p>النشاط الديني</p>
+                    <span>يهدف النشاط الكشفي إلى تنمية روح القيادة والاعتماد على النفس والعمل الجماعي، من خلال تعلم المهارات الكشفية
+                        مثل التخييم، والعقد والربطات، والإسعافات الأولية، وتنفيذ الأنشطة الميدانية المختلفة.</span>
+                </div>
+                <div class="act scoutly">
+                    <i class="fa-solid fa-binoculars"></i>
+                    <p>النشاط الكشفي</p>
+                    <span>يهدف النشاط الكشفي إلى تنمية روح القيادة والاعتماد على النفس والعمل الجماعي، من خلال تعلم المهارات الكشفية
+                         مثل التخييم، والعقد والربطات، والإسعافات الأولية، وتنفيذ الأنشطة الميدانية المختلفة.</span>
+                </div>
+                <div class="act culture">
+                    <i class="fa-solid fa-landmark"></i>
+                    <p>النشاط الثقافي</p>
+                    <span>يهدف النشاط الكشفي إلى تنمية روح القيادة والاعتماد على النفس والعمل الجماعي، من خلال تعلم المهارات الكشفية
+                        مثل التخييم، والعقد والربطات، والإسعافات الأولية، وتنفيذ الأنشطة الميدانية المختلفة.</span>
+                </div>
+                <div class="act artly">
+                    <i class="fa-solid fa-paintbrush"></i>
+                    <p>النشاط الفني</p>
+                    <span>يهدف النشاط الكشفي إلى تنمية روح القيادة والاعتماد على النفس والعمل الجماعي، من خلال تعلم المهارات الكشفية
+                        مثل التخييم، والعقد والربطات، والإسعافات الأولية، وتنفيذ الأنشطة الميدانية المختلفة.</span>
+                </div>
+        </div>
+        </section>
+        <!-- <div class="outline-photo">
+            <img src="assets/images/outlinephoto.jpg" alt="">
+        </div> -->
+        <section id="comittee">
+            <span class="scout-icon"></span>
+            <p class="comittee-title">اللجان النوعية</p>
+            <div class="type-of-comittee">
+                <div class="comit media">
+                  <p>لجنة الميديا</p>
+                  <img class="comit-logo" src="assets/images/media-comittee.png" alt="">
+                    <span>
+                        تختص بتوثيق أنشزة العشيرة وانتاج المحتوى الاعلامي، وتنمية مهارات الاعضاء الابداعية
+                    </span>
+                    <br> <br>
+                    <button class="more-btn" 
+                        data-committee ="media">عرض المزيد</button>
+                 </div>
+                 <div class="comit hr">
+                     <img class="comit-logo" src="assets/images/media-comittee.png" alt="">
+                     <p>لجنة السكرتارية</p>
+                     <span>تهتم بتنزيم اعمال العشيرة ومتابعة الاعضاء والبيانات، وتعزيز التواصل والتنسيق بين مختلف اللجان</span>
+                     <br> <br>
+                     <button class="more-btn" 
+                        data-committee ="hr">عرض المزيد</button>
+                </div>
+                <div class="comit pr">
+                    <img class="comit-logo" src="assets/images/media-comittee.png" alt="">
+                    <p>لجنة الخدمة العامة</p>
+                    <span>تعمل على تنظيم المبادرات والانشطة التطوعية والمساهمة في خدمة المجتمع وتنمية روح العطاء لدى الافراد</span>
+                    <br>
+                    <button class="more-btn" 
+                        data-committee ="pr">عرض المزيد</button>
+                </div>
+                 <div class="comit finan">
+                    <img class="comit-logo" src="assets/images/media-comittee.png" alt="">
+                    <p>لجنة الصندوق والعهدة</p>
+                    <span>تختص بادارة الموارد المالية والعهد الخاصة بالعشيرة، وتنظيمها والمحافظة عليها بما يضمن حسن استخدامها.</span>
+                    <br>
+                    <button class="more-btn" 
+                        data-committee ="finan">عرض المزيد</button>
+                </div>
+        </div>
+        </section>
+    </main>
+    <footer id = "contact">
+       <div class="right-secttion">
+        <img src="assets/images/SCOUT.png" alt="logo">
+            <p>عشيرة جوالة كلية العلوم
+                <span class="uni1">جامعة عين شمس</span>
+            </p>
+            <p class="footerpara">جميع الحقوق محفوظة &copy 2026</p>
+       </div>
+       <div class="mid-right">
+            <p>تابعنا</p>
+            <div class="scoile">
+                <i class="fa-brands fa-youtube"></i> 
+                <i class="fa-brands fa-facebook" id="facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+       </div>
+       <div class="mid-left">
+            <p>تواصل معنا</p>
+            <div class="e-mail"><i class="fa-solid fa-envelope"></i><span> sciencerover@gmail.com</span>
+                <p><i class="fa-solid fa-location-dot"></i><a href="#"> <span> كلية العلوم-جامعة عين شمس </span></a></p>
+            </div>
+           
+        </div>
+       <div class="left">
+        <p>روابط سريعة</p>
+            <ul>
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="#">من نحن</a></li>
+                <li><a href="#">فريق القيادة</a></li>
+                <li><a href="#">الأنشظة</a></li>
+            </ul>
+       </div>
+    </footer>
+
+    <div class="modal" id="comitteeModal">
+        <div class="modal-content">
+
+            <button class="close-btn" id = "closeModal"> x </button>
+            
+            <h1 id = "modalTitle"></h1>
+
+            <p id="modalDescription"></p>
+            <hr>
+            <h2>أهم المهام</h2>
+
+            <div id = "modalTasks"></div>
+
+            <span id="skills-res">المهارات المكتسبة:</span>
+
+            <span id = "modalSkills"></span>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
