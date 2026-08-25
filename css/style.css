@@ -102,6 +102,7 @@ main .hero img{
 #about{
     width: 100%;
     position: relative;
+    border-bottom: 1px solid yellow;
 }
 #about-title::before{
     content: "⚜️   ";
@@ -608,5 +609,319 @@ body.modal-open::before {
         width: 110px;
         height: 38px;
         font-size: 13px;
+    }
+}
+
+
+
+
+
+/* =========================
+   Gallery
+========================= */
+
+.gallery {
+    width: 100%;
+    padding: 80px 5%;
+    box-sizing: border-box;
+    background: #0f081a;
+    color: white;
+    text-align: center;
+}
+
+/* Title */
+
+.section-title h2 {
+    font-size: 42px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.section-title h2::after {
+    content: "";
+    display: block;
+    width: 140px;
+    height: 3px;
+    margin: 12px auto;
+    background: #d8bd63;
+}
+
+.section-title p {
+    font-size: 18px;
+    color: #ddd;
+    margin-bottom: 40px;
+}
+
+
+/* =========================
+   Gallery Container
+========================= */
+
+.gallery-container {
+    position: relative;
+
+    width: 85%;
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================
+   Main Card
+========================= */
+
+.gallery-card {
+    position: relative;
+
+    width: 100%;
+    height: 500px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    border: 1px solid #d8bd63;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =========================
+   Overlay
+========================= */
+
+.gallery-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(15, 8, 26, 0.9),
+            rgba(15, 8, 26, 0.15)
+        );
+}
+
+.gallery-overlay h3 {
+    font-size: 48px;
+
+    margin-bottom: 10px;
+
+    text-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.7);
+}
+
+.gallery-overlay p {
+    font-size: 20px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   Details Button
+========================= */
+
+.gallery-details {
+    text-decoration: none;
+
+    color: #171126;
+
+    background: #d8bd63;
+
+    padding: 12px 30px;
+
+    border-radius: 30px;
+
+    font-size: 17px;
+
+    transition: 0.3s ease;
+}
+
+.gallery-details:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 5px 15px rgba(216, 189, 99, 0.35);
+}
+
+
+/* =========================
+   Arrows
+========================= */
+
+.gallery-btn {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    border: 1px solid #d8bd63;
+
+    background: rgba(60, 25, 90, 0.9);
+
+    color: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    transition: 0.3s ease;
+}
+
+.gallery-btn:hover {
+    background: #d8bd63;
+
+    color: #171126;
+
+    transform:
+        translateY(-50%)
+        scale(1.08);
+}
+
+.right-btn {
+    right: -25px;
+}
+
+.left-btn {
+    left: -25px;
+}
+
+
+/* =========================
+   Dots
+========================= */
+
+.gallery-dots {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    margin: 25px 0 35px;
+}
+
+.gallery-dots span {
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #777;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.gallery-dots span.active {
+    background: #d8bd63;
+
+    transform: scale(1.3);
+}
+
+
+/* =========================
+   Events
+========================= */
+
+.gallery-events {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 45px;
+
+    flex-wrap: wrap;
+}
+
+.event {
+    cursor: pointer;
+
+    min-width: 90px;
+
+    color: #bbb;
+
+    transition: 0.3s ease;
+}
+
+.event span {
+    display: block;
+
+    font-size: 30px;
+
+    margin-bottom: 8px;
+}
+
+.event p {
+    margin: 0;
+
+    font-size: 15px;
+}
+
+.event:hover,
+.event.active {
+    color: #d8bd63;
+
+    transform: translateY(-4px);
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 768px) {
+
+    .gallery {
+        padding: 60px 15px;
+    }
+
+    .section-title h2 {
+        font-size: 32px;
+    }
+
+    .section-title p {
+        font-size: 15px;
+    }
+
+    .gallery-container {
+        width: 100%;
     }
 }

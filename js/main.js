@@ -128,3 +128,129 @@ menuBtn.addEventListener("click", () => {
     console.log("clicked");
     navLinks.classList.toggle("active");
 });
+
+//==================================================================================
+
+const galleryData = [
+    {
+        title: "اليوم البحري",
+        description: "يوم مليء بالأنشطة والمغامرات على شاطئ البحر",
+        image: "assets/images/sea-day.jpg",
+        link: "gallery-details.html?event=beach"
+    },
+    {
+        title: "حفل بداية النشاط",
+        description: "بداية عام جديد مليء بالأنشطة والتحديات",
+        image: "assets/images/open-day.jpg",
+        link: "gallery-details.html?event=start"
+    },
+    {
+        title: "حفل التسليم",
+        description: "نحتفل معًا بإنجازات وأنشطة العام",
+        image: "assets/images/tasleem-day.jpg",
+        link: "gallery-details.html?event=closing"
+    },
+    {
+        title: "تلوين جدار العشيرة",
+        description: "يوم من الإبداع والفن والعمل الجماعي",
+        image: "assets/images/wall-day.jpg",
+        link: "gallery-details.html?event=painting"
+    },
+    {
+        title: "يوم الخير",
+        description: "يوم لخدمة المجتمع ونشر الخير",
+        image: "assets/images/5aar-day.jpg",
+        link: "gallery-details.html?event=charity"
+    },
+    {
+        title: "افطار العشيرة",
+        description: "افطار العشيرة الرمضاني السنوي",
+        image: "assets/images/iftar-day.jpg",
+        link: "gallery-details.html?event=charity"
+    },
+    {
+        title: "معسكر العشيرة",
+        description: "التخييم وتطوير المهارات",
+        image: "assets/images/camp-day.jpg",
+        link: "gallery-details.html?event=charity"
+    }
+];
+
+const galleryImage = document.querySelector(".gallery-card img");
+const galleryTitle = document.querySelector(".gallery-overlay h3");
+const galleryDescription = document.querySelector(".gallery-overlay p");
+const galleryDetails = document.querySelector(".gallery-details");
+
+const dots = document.querySelectorAll(".gallery-dots span");
+const events = document.querySelectorAll(".gallery-events .event");
+
+const nextButton = document.querySelector(".left-btn");
+const previousButton = document.querySelector(".right-btn");
+
+let currentIndex = 0;
+
+function showEvent(index) {
+
+    currentIndex = index;
+    const event = galleryData[currentIndex];
+
+    galleryImage.src = event.image;
+    galleryImage.alt = event.title;
+
+    galleryTitle.textContent = event.title;
+
+    galleryDescription.textContent = event.description;
+
+    galleryDetails.href = event.link;
+
+
+    
+    dots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === currentIndex);
+    });
+
+    events.forEach((eventElement, i) => {
+        eventElement.classList.toggle(
+            "active",
+            i === currentIndex
+        );
+    });
+}
+
+nextButton.addEventListener("click", () => {
+
+    let nextIndex = currentIndex + 1;
+
+    if (nextIndex >= galleryData.length) {
+        nextIndex = 0;
+    }
+
+    showEvent(nextIndex);
+});
+
+previousButton.addEventListener("click", () => {
+
+    let previousIndex = currentIndex - 1;
+
+    if (previousIndex < 0) {
+        previousIndex = galleryData.length - 1;
+    }
+
+    showEvent(previousIndex);
+});
+
+dots.forEach((dot, index) => {
+
+    dot.addEventListener("click", () => {
+        showEvent(index);
+    });
+
+});
+
+events.forEach((event, index) => {
+
+    event.addEventListener("click", () => {
+        showEvent(index);
+    });
+
+});
