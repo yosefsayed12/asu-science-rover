@@ -136,6 +136,27 @@ const events = {
             "assets/images/camp-day.jpg",
             "assets/images/camp-day.jpg"
         ]
+    },
+
+    wafdya: {
+        title: "الوفدية الـ 55 لعشائر الجامعة",
+        description:
+            "مشاركة عشيرة جوالة كلية العلوم بالوفدية وحصولها على المستوى الاول في جميع المستويات",
+        date: "10 أغسطس 2026",
+        mainImage: "assets/images/wafdya-day.jpg",
+        activities: [
+            "الخدمة العامة",
+            "المساعدات المجتمعية",
+            "الأنشطة الخيرية",
+            "العمل الجماعي"
+        ],
+        images: [
+            "assets/images/wafdya.jpg",
+            "assets/images/wafdya1.jpg",
+            "assets/images/wafdya2.jpg",
+            "assets/images/wafdya3.jpg",
+            "assets/images/wafdya4.jpg"
+        ]
     }
 };
 

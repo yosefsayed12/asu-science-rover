@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ai-chat.css">
     
 
     <!-- <style>
@@ -34,7 +35,7 @@
             <a href="#comittee">اللجان النوعية</a>
             <a href="#contact">تواصل معنا</a>
         </div>
-            <button id="join-us">انضم الينا</button>
+            <button id="join-us" class="btn">انضم الينا</button>
             <button id="menu-btn">☰</button>
         </nav>
     </header>
@@ -43,14 +44,14 @@
             <img id="ama" src="assets/images/photo_2026-07-29_22-15-42.jpg" alt="photo">
             <div class="popup" id="successPopup">
                 <p>تم تعبئة الكرش بنجاح</p>
-                <button id = "closePopup">تمام</button>
+                <button id = "closePopup" class="btn">تمام</button>
             </div>
             <div class="hero-content">
                 <p id="scout">عشيرة جوالة</p>
                 <p class="clan-name">كلية العلوم</p>
                 <p class="uni">جامعة عين شمس</p>
                 <p class="qoute">نبني القادة... ونخدم المجتمع</p>
-                <a href="#about-content"><button class="now-more">اعرف أكتر</button></a>
+                <a href="#about-content"><button class="now-more btn">اعرف أكتر</button></a>
                 <!-- <button id="join">انضم الينا</button> -->
             </div>
         </section>
@@ -102,6 +103,7 @@
         <span></span>
         <span></span>
         <span></span>
+        <span></span>
     </div>
 
     
@@ -133,6 +135,10 @@
         <div class="event">
             <span>⛺️</span>
             <p>معسكر العشيرة</p>
+        </div>
+        <div class="event">
+            <span>⚔️</span>
+            <p>الوفدية</p>
         </div>
     </div>
 </section>
@@ -178,7 +184,7 @@
                         تختص بتوثيق أنشزة العشيرة وانتاج المحتوى الاعلامي، وتنمية مهارات الاعضاء الابداعية
                     </span>
                     <br> <br>
-                    <button class="more-btn" 
+                    <button class="more-btn btn" 
                         data-committee ="media">عرض المزيد</button>
                  </div>
                  <div class="comit hr">
@@ -186,7 +192,7 @@
                      <p>لجنة السكرتارية</p>
                      <span>تهتم بتنزيم اعمال العشيرة ومتابعة الاعضاء والبيانات، وتعزيز التواصل والتنسيق بين مختلف اللجان</span>
                      <br> <br>
-                     <button class="more-btn" 
+                     <button class="more-btn btn" 
                         data-committee ="hr">عرض المزيد</button>
                 </div>
                 <div class="comit pr">
@@ -194,7 +200,7 @@
                     <p>لجنة الخدمة العامة</p>
                     <span>تعمل على تنظيم المبادرات والانشطة التطوعية والمساهمة في خدمة المجتمع وتنمية روح العطاء لدى الافراد</span>
                     <br>
-                    <button class="more-btn" 
+                    <button class="more-btn btn" 
                         data-committee ="pr">عرض المزيد</button>
                 </div>
                  <div class="comit finan">
@@ -202,7 +208,7 @@
                     <p>لجنة الصندوق والعهدة</p>
                     <span>تختص بادارة الموارد المالية والعهد الخاصة بالعشيرة، وتنظيمها والمحافظة عليها بما يضمن حسن استخدامها.</span>
                     <br>
-                    <button class="more-btn" 
+                    <button class="more-btn btn" 
                         data-committee ="finan">عرض المزيد</button>
                 </div>
         </div>
@@ -260,6 +266,58 @@
             <span id = "modalSkills"></span>
         </div>
     </div>
+
+<div class="ai-chat">
+
+    <button class="ai-chat-btn" id="aiChatBtn" aria-label="فتح مساعد العشيرة">
+        💬
+    </button>
+
+    <div class="ai-chat-box" id="aiChatBox">
+        <div class="ai-chat-header">
+            <div class="ai-chat-title">
+                <span class="ai-icon">💬</span>
+                <div>
+                    <h3>باند باول</h3>
+                    <span>اسألني عن الكلية أو العشيرة</span>
+                </div>
+            </div>
+
+            <button
+                class="ai-close-btn"
+                id="aiCloseBtn"
+                aria-label="إغلاق المحادثة"
+            >
+                x
+            </button>
+
+        </div>
+
+        <div class="ai-chat-messages" id="aiMessages">
+            <div class="ai-message bot">
+                <span class="message-icon">🤖</span>
+                <div class="message-bubble">
+                    أهلاً بيك 👋<br>
+                    أنا باند باول، تقدر تسألني عن
+                    كلية العلوم أو عشيرة الجوالة.
+                </div>
+            </div>
+        </div>
+        
+        <form class="ai-chat-input" id="aiForm">
+            <input
+                type="text"
+                id="aiInput"
+                placeholder="اكتب سؤالك هنا..."
+                autocomplete="off"
+            >
+            <button type="submit" id="aiSendBtn">
+                ➤
+            </button>
+        </form>
+    </div>
+</div>
     <script src="js/main.js"></script>
+    <script src="js/ai-chat.js"></script>
 </body>
 </html>

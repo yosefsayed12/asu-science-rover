@@ -171,6 +171,12 @@ const galleryData = [
         description: "التخييم وتطوير المهارات",
         image: "assets/images/camp-day.jpg",
         link: "gallery-details.html?event=camp"
+    },
+    {
+        title: "الوفدية الـ55 لعشائر الجامعة",
+        description: "التنافس بين عشاير الجامعة",
+        image: "assets/images/wafdya-day.jpg",
+        link: "gallery-details.html?event=wafdya"
     }
 ];
 
