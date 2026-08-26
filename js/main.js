@@ -63,6 +63,9 @@ const committees = {
 moreButtons.forEach(button => {
     button.addEventListener("click", () => {
 
+        console.log("scroll: ", window.scrollY);
+        console.log("modal: ", modal);
+        console.log("modal react: ", modal.getBoundingClientRect());
         const committeeName = button.dataset.committee;
         const committee = committees[committeeName];
 
@@ -211,6 +214,22 @@ function showEvent(index) {
     });
 }
 
+function animateGallery(direction) {
+
+    galleryDetails.classList.remove(
+        "slide-right",
+        "slide-left"
+    );
+
+    void galleryDetails.offsetWidth;
+
+    if (direction === "next") {
+        galleryDetails.classList.add("slide-right");
+    } else {
+        galleryDetails.classList.add("slide-left");
+    }
+}
+
 nextButton.addEventListener("click", () => {
 
     let nextIndex = currentIndex + 1;
@@ -220,6 +239,8 @@ nextButton.addEventListener("click", () => {
     }
 
     showEvent(nextIndex);
+
+    animateGallery("next");
 });
 
 previousButton.addEventListener("click", () => {
@@ -231,6 +252,7 @@ previousButton.addEventListener("click", () => {
     }
 
     showEvent(previousIndex);
+    animateGallery("next");
 });
 
 dots.forEach((dot, index) => {

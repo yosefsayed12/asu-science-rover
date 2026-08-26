@@ -139,17 +139,13 @@ const events = {
     }
 };
 
+
 const params = new URLSearchParams(
     window.location.search
 );
 
-console.log(window.location.href);
-console.log(window.location.search);
-console.log(params.toString());
 const eventId = params.get("event");
 const currentEvent = events[eventId];
-
-console.log(eventId);
 
 if (!currentEvent) {
     document.querySelector(".event-page").innerHTML =
@@ -199,8 +195,7 @@ function loadEvent(currentEvent) {
 
 
     // Photos
-    const photosContainer =
-        document.querySelector("#photos-container");
+    const photosContainer = document.querySelector("#photos-container");
 
     photosContainer.innerHTML = "";
 
@@ -218,20 +213,11 @@ function loadEvent(currentEvent) {
 }
 
 
-const lightbox =
-    document.querySelector("#lightbox");
-
-const lightboxImage =
-    document.querySelector("#lightbox-image");
-
-const closeLightbox =
-    document.querySelector("#close-lightbox");
-
-const nextImage =
-    document.querySelector("#next-image");
-
-const prevImage =
-    document.querySelector("#prev-image");
+const lightbox = document.querySelector("#lightbox");
+const lightboxImage = document.querySelector("#lightbox-image");
+const closeLightbox = document.querySelector("#close-lightbox");
+const nextImage = document.querySelector("#next-image");
+const prevImage = document.querySelector("#prev-image");
 
 let currentImage = 0;
 
