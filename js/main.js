@@ -72,16 +72,11 @@ moreButtons.forEach(button => {
         modalDescription.textContent = committee.description;
         modalTasks.innerHTML = "";
 
-        let i = 1;
         committee.tasks.forEach(task => {
             const span = document.createElement("span");
             span.classList.add("modalSpan");
             span.textContent = task;
             modalTasks.appendChild(span);
-            // if(i===2){
-            //     modalTasks.appendChild(document.createElement("br"));
-            // }
-            i++;
         });
 
         modalSkills.textContent = committee.skills;
@@ -114,7 +109,7 @@ if(localStorage.getItem("joinSuccess") === "true"){
 
 closePop.addEventListener('click', () => {
     successPop.style.display = "none";
-})
+});
 
 //========================================================================
 
@@ -136,7 +131,7 @@ const galleryData = [
         title: "اليوم البحري",
         description: "يوم مليء بالأنشطة والمغامرات على شاطئ البحر",
         image: "assets/images/sea-day.jpg",
-        link: "gallery-details.html?event=beach"
+        link: "gallery-details.html?event=sea"
     },
     {
         title: "حفل بداية النشاط",
@@ -166,13 +161,13 @@ const galleryData = [
         title: "افطار العشيرة",
         description: "افطار العشيرة الرمضاني السنوي",
         image: "assets/images/iftar-day.jpg",
-        link: "gallery-details.html?event=charity"
+        link: "gallery-details.html?event=iftar"
     },
     {
         title: "معسكر العشيرة",
         description: "التخييم وتطوير المهارات",
         image: "assets/images/camp-day.jpg",
-        link: "gallery-details.html?event=charity"
+        link: "gallery-details.html?event=camp"
     }
 ];
 
@@ -203,12 +198,11 @@ function showEvent(index) {
 
     galleryDetails.href = event.link;
 
-
     
     dots.forEach((dot, i) => {
         dot.classList.toggle("active", i === currentIndex);
     });
-
+    
     events.forEach((eventElement, i) => {
         eventElement.classList.toggle(
             "active",

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery-Details</title>
+    <link rel="stylesheet" href="css/gallery.css">
+</head>
+
+<body>
+    <main class="event-page">
+        <a href="index.html" class="back-btn">
+            ← العودة إلى المعرض
+        </a>
+        <section class="event-info">
+            <div class="event-text">
+                <span class="event-category">
+                    من فعاليات العشيرة
+                </span>
+
+                <h1 id="event-title"></h1>
+
+                <p id="event-description"></p>
+
+                <div class="event-date">
+                    📅
+                    <span id="event-date"></span>
+                </div>
+
+            </div>
+
+            <div class="event-main-image">
+                <img id="main-image" src="" alt="">
+            </div>
+
+        </section>
+
+        <section class="activities-section">
+            <h2>أبرز الأنشطة</h2>
+            <div id="activities-container" class="activities"></div>
+        </section>
+
+        <section class="photos-section">
+            <h2>صور الفعالية</h2>
+            <div id="photos-container" class="photos-grid"></div>
+        </section>
+    </main>
+
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+
+        <button class="close-lightbox"
+            id="close-lightbox">
+            ×
+        </button>
+
+        <button class="lightbox-btn prev"
+            id="prev-image">
+             ❮
+        </button>
+
+        <img id="lightbox-image"
+            src=""
+            alt="">
+
+        <button class="lightbox-btn next"
+            id="next-image">
+            ❯
+        </button>
+
+    </div>
+
+
+    <script src="js/gallery.js"></script>
+
+</body>
+
+</html>

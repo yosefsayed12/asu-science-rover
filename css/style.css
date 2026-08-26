@@ -335,16 +335,6 @@ footer .right-secttion img {
     background-color: #211736;   
 
 }
-/* for outline logo in background
- .outline-photo{
-    z-index: -99;
-    position: absolute;
-    width: 100%;
-    opacity: .08;
-    overflow: hidden;
-    top: 30%;
-    
-} */
 
 #comittee, #about, #activity{
     padding-top: 70px;
@@ -365,7 +355,7 @@ footer .right-secttion img {
     display: none;
     position: fixed;
     inset: 0;
-    background-color: (0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);
     justify-content: center;
     align-items: center;
     z-index: 100;
