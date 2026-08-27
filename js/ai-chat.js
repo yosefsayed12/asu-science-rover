@@ -69,7 +69,7 @@ function showTyping() {
 
 
     typingMessage.innerHTML =` 
-        <span class="message-icon">🤖</span>
+        <span class="message-icon"><i class="fa-solid fa-robot" style="color: rgb(86, 84, 87)"></i></span>
 
         <div class="message-bubble">
             <div class="typing">

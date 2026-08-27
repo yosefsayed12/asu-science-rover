@@ -1,6 +1,3 @@
-const facebook = document.getElementById("facebook");
-const btn = document.querySelector("#join-us");
-
 const modal = document.getElementById("comitteeModal")
 const modalTitle = document.getElementById("modalTitle");
 const modalDescription = document.getElementById("modalDescription");
@@ -90,9 +87,17 @@ moreButtons.forEach(button => {
 closeModal.addEventListener("click", () => {
     modal.style.display = "none";
     document.body.classList.remove("modal-open");
+});
+
+//========================================================
+const youtube = document.querySelector("#youtube");
+const facebook = document.getElementById("facebook");
+const btn = document.querySelector("#join-us");
+
+youtube.addEventListener('click', () => {
+    window.open("https://www.youtube.com/@scienceseascout6698", "_blank");
 })
 facebook.addEventListener("click", () => {
-    console.log("Clicked!");
     window.open("https://web.facebook.com/scienceseascouts", "_blank");
 });
 
@@ -173,7 +178,8 @@ const galleryData = [
         link: "gallery-details.html?event=camp"
     },
     {
-        title: "الوفدية الـ55 لعشائر الجامعة",
+        // title: "الوفدية الـ55 لعشائر الجامعة",
+        title: "الدورة الكشفية الـ 55 والارشادية الـ 43 لعشائر الجامعة",
         description: "التنافس بين عشاير الجامعة",
         image: "assets/images/wafdya-day.jpg",
         link: "gallery-details.html?event=wafdya"

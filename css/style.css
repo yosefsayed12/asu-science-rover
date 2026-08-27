@@ -323,12 +323,10 @@ footer .right-secttion img {
 .now-more{
     margin-top: 1%;
     width: 12rem;
+    border: none;
     transform-style: flat;
 }
 
-.now-more::after{
-    content: " ==>";
-}
 
 @media (max-width: 1100px) and (min-width: 950px){
     .type-of-activities, .type-of-comittee {
