@@ -137,7 +137,7 @@ menuBtn.addEventListener("click", () => {
 const galleryData = [
     {
         title: "اليوم البحري",
-        description: "يوم مليء بالأنشطة والمغامرات على شاطئ البحر",
+        description: "يوم ترفيهي مليء بالأنشطة والمغامرات ",
         image: "assets/images/sea-day.jpg",
         link: "gallery-details.html?event=sea"
     },
@@ -148,8 +148,8 @@ const galleryData = [
         link: "gallery-details.html?event=start"
     },
     {
-        title: "حفل التسليم",
-        description: "نحتفل معًا بإنجازات وأنشطة العام",
+        title: "حفل تسليم قيادة العشيرة",
+        description: "لحظة تسليم الراية وبداية فصل جديد",
         image: "assets/images/tasleem-day.jpg",
         link: "gallery-details.html?event=closing"
     },
@@ -167,7 +167,7 @@ const galleryData = [
     },
     {
         title: "افطار العشيرة",
-        description: "افطار العشيرة الرمضاني السنوي",
+        description: "على مائدة واحدة... تجمعنا المحبة وروح العشيرة",
         image: "assets/images/iftar-day.jpg",
         link: "gallery-details.html?event=iftar"
     },
