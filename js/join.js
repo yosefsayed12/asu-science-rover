@@ -97,7 +97,7 @@ form.addEventListener("submit", async(e) =>{
     
         try {
             const response = await fetch(
-                "https://asu-science-rover-3o4z-git-main-asus-cience-rover.vercel.app/api/join",
+                "https://asu-science-rover-3o4z.vercel.app/api/join",
                 {
                     method: "POST",
                     headers: {

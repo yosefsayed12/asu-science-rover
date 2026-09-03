@@ -223,7 +223,7 @@ aiForm.addEventListener("submit", async (event) => {
     try {
 
         const response = await fetch(
-            "https://asu-science-rover-3o4z-git-main-asus-cience-rover.vercel.app/api/ai/ask",
+            "https://asu-science-rover-3o4z.vercel.app/api/ai/ask",
             {
                 method: "POST",
 
