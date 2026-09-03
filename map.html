@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>خريطة كلية العلوم</title>
+
+    <link rel="stylesheet" href="css/map.css">
+    <link rel="stylesheet" href="css/fonts.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="map-header">
+
+        <div class="title">
+            <span>🧭</span>
+
+            <div>
+                <h1>خريطة كلية العلوم</h1>
+                <p>اكتشف أهم الأماكن داخل الكلية</p>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-btn">
+            ← العودة
+        </a>
+    </header>
+
+
+    <!-- Main -->
+    <main class="map-page">
+        <div class="map-card">
+
+            <!-- Search -->
+            <div class="search-box">
+
+                <span>🔍</span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="ابحث عن مكان..."
+                >
+
+            </div>
+
+
+            <!-- Map -->
+            <div class="map">
+
+                <img
+                    src="assets/images/sciencemap.jpg"
+                    alt="خريطة كلية العلوم"
+                >
+
+
+                <!-- ================= MARKERS ================= -->
+
+                <button
+                    class="marker"
+                    data-place="gate"
+                    style="left: 48%; top: 82%;"
+                >
+                    🚪
+                </button>
+
+
+                <button
+                    class="marker"
+                    data-place="library"
+                    style="left: 40%; top: 43%;"
+                >
+                    📚
+                </button>
+
+
+                <button
+                    class="marker"
+                    data-place="labs"
+                    style="left: 66%; top: 43%;"
+                >
+                    🔬
+                </button>
+
+
+                <button
+                    class="marker"
+                    data-place="student"
+                    style="left: 48%; top: 55%;"
+                >
+                    🎓
+                </button>
+
+
+                <button
+                    class="marker"
+                    data-place="youth"
+                    style="left: 58%; top: 62%;"
+                >
+                    🏆
+                </button>
+
+
+                <!-- Popup -->
+
+                <div
+                    class="map-popup"
+                    id="mapPopup"
+                >
+
+                    <button
+                        class="close-popup"
+                        id="closePopup"
+                    >
+                        ×
+                    </button>
+
+
+                    <div
+                        class="popup-icon"
+                        id="popupIcon"
+                    >
+                        📍
+                    </div>
+
+
+                    <h2 id="popupTitle">
+                        المكان
+                    </h2>
+
+
+                    <p id="popupDescription">
+                        وصف المكان
+                    </p>
+
+
+                    <a
+                        href="#"
+                        target="_blank"
+                        id="mapsLink"
+                        class="maps-button"
+                    >
+                        🧭 الوصول للمكان
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Places -->
+
+            <div class="places">
+
+                <h2>الأماكن المهمة</h2>
+
+
+                <div class="places-grid">
+
+                    <button
+                        class="place"
+                        data-place="gate"
+                    >
+                        🚪
+                        <span>البوابة الرئيسية</span>
+                    </button>
+
+
+                    <button
+                        class="place"
+                        data-place="library"
+                    >
+                        📚
+                        <span>المكتبة</span>
+                    </button>
+                    <button
+                        class="place"
+                        data-place="labs"
+                    >
+                        🔬
+                        <span>المعامل</span>
+                    </button>
+
+
+                    <button
+                        class="place"
+                        data-place="student"
+                    >
+                        🎓
+                        <span>شؤون الطلاب</span>
+                    </button>
+
+
+                    <button
+                        class="place"
+                        data-place="youth"
+                    >
+                        🏆
+                        <span>رعاية الشباب</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="js/map.js"></script>
+
+</body>
+
+</html>

@@ -91,7 +91,6 @@ main .hero img{
 #about{
     width: 100%;
     position: relative;
-    border-bottom: 1px solid yellow;
 }
 #about-title::before{
     content: "⚜️   ";
@@ -100,7 +99,6 @@ main .hero img{
 
 #about-content{
     margin: 1% 20% 0;
-
 }
 
 #about-title, .title-leader, .title-activity, .comittee-title{

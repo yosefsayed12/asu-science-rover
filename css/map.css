@@ -1,0 +1,514 @@
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+    --background: #0F081A;
+
+    --primary: #6C4AB6;
+    --primary-dark: #4E3488;
+
+    --text: #ffffff;
+    --muted: #B8AFC2;
+
+    --card: rgba(255, 255, 255, 0.05);
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background: var(--background);
+
+    color: var(--text);
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.map-header {
+    min-height: 90px;
+
+    padding: 20px 5%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
+}
+
+
+.title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.title > span {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--primary);
+
+    border-radius: 16px;
+
+    font-size: 27px;
+}
+
+
+.title h1 {
+    font-size: 27px;
+
+    margin-bottom: 5px;
+}
+
+
+.title p {
+    color: var(--muted);
+}
+
+
+.back-btn {
+    color: white;
+
+    text-decoration: none;
+
+    padding: 10px 17px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    border-radius: 12px;
+
+    transition: .3s;
+}
+
+
+.back-btn:hover {
+    background: var(--primary);
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.map-page {
+    width: 94%;
+
+    max-width: 1200px;
+
+    margin: 35px auto;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.map-card {
+    background: var(--card);
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    border-radius: 24px;
+
+    padding: 20px;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-box {
+    max-width: 450px;
+
+    margin-bottom: 20px;
+
+    padding: 13px 16px;
+
+    background:
+        rgba(0,0,0,.25);
+
+    border-radius: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.search-box input {
+    width: 100%;
+
+    background: transparent;
+
+    border: none;
+
+    outline: none;
+
+    color: white;
+
+    font-size: 15px;
+}
+
+
+.search-box input::placeholder {
+    color: #999;
+}
+
+
+/* =========================
+   MAP
+========================= */
+
+.map {
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #222;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0,0,0,.3);
+}
+
+
+.map img {
+    width: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =========================
+   MARKERS
+========================= */
+
+.marker {
+    position: absolute;
+
+    transform: translate(-50%, -50%);
+
+    width: 48px;
+    height: 48px;
+
+    border: 3px solid white;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+
+    cursor: pointer;
+
+    font-size: 21px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 6px 18px
+        rgba(0,0,0,.35);
+
+    transition:
+        transform .25s,
+        background .25s;
+}
+
+
+.marker:hover,
+.marker.active {
+    transform:
+        translate(-50%, -50%)
+        scale(1.2);
+
+    background: var(--primary-dark);
+}
+
+
+/* =========================
+   POPUP
+========================= */
+
+.map-popup {
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
+    width: 280px;
+
+    padding: 20px;
+
+    background: white;
+
+    color: #292331;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0,0,0,.35);
+
+    display: none;
+
+    z-index: 20;
+}
+
+
+.map-popup.show {
+    display: block;
+
+    animation:
+        popup .25s ease;
+}
+
+
+@keyframes popup {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+.close-popup {
+    position: absolute;
+
+    top: 10px;
+    left: 10px;
+
+    width: 30px;
+    height: 30px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    font-size: 20px;
+}
+.popup-icon {
+    font-size: 35px;
+
+    margin-bottom: 8px;
+}
+
+
+.map-popup h2 {
+    margin-bottom: 8px;
+}
+
+
+.map-popup p {
+    color: #666;
+
+    line-height: 1.7;
+
+    margin-bottom: 17px;
+}
+
+
+.maps-button {
+    display: block;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    color: white;
+
+    background: var(--primary);
+
+    padding: 11px;
+
+    border-radius: 10px;
+}
+
+
+.maps-button:hover {
+    background: var(--primary-dark);
+}
+
+
+/* =========================
+   PLACES
+========================= */
+
+.places {
+    margin-top: 25px;
+}
+
+
+.places h2 {
+    font-size: 20px;
+
+    margin-bottom: 15px;
+}
+
+
+.places-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 10px;
+}
+
+
+.place {
+    border: none;
+
+    background:
+        rgba(255,255,255,.06);
+
+    color: white;
+
+    padding: 15px 10px;
+
+    border-radius: 13px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+
+    transition: .25s;
+}
+
+
+.place:hover,
+.place.active {
+    background: var(--primary);
+
+    transform: translateY(-3px);
+}
+
+
+.place span {
+    font-size: 13px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .map-header {
+        flex-direction: column;
+
+        gap: 15px;
+
+        align-items: stretch;
+    }
+
+
+    .back-btn {
+        text-align: center;
+    }
+
+
+    .title h1 {
+        font-size: 21px;
+    }
+
+
+    .map-page {
+        width: 96%;
+
+        margin-top: 20px;
+    }
+
+
+    .map-card {
+        padding: 12px;
+
+        border-radius: 18px;
+    }
+
+
+    .marker {
+        width: 40px;
+        height: 40px;
+
+        font-size: 17px;
+    }
+
+
+    .map-popup {
+        width:
+            calc(100% - 24px);
+
+        right: 12px;
+
+        top: 12px;
+    }
+
+
+    .places-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}

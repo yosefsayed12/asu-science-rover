@@ -11,8 +11,11 @@ const name = document.getElementById("name");
 const phone = document.querySelector("#phone");
 const email = document.querySelector("#email");
 const level = document.querySelector("#level");
+const scouting = document.querySelector("#scouting");
+const listen = document.querySelector("#listen");
+const program = document.querySelector("#program");
 
-form.addEventListener("submit", (e) =>{
+form.addEventListener("submit", async(e) =>{
     e.preventDefault();
     
     document.querySelectorAll('.erorr').forEach(el => el.textContent = '');
@@ -64,19 +67,62 @@ form.addEventListener("submit", (e) =>{
         isValid = false;
     }
 
-    if (isValid) {
-    const formData = {
-        name: name.value.trim(),
-        phone: phone.value.trim(),
-        email: email.value.trim(),
-        level: level.value
-    };
-    console.log(formData);
-    form.submit();
-    localStorage.setItem("joinSuccess", "true");
-    window.location.href = "index.html";
+    if(scouting.value.trim().length === 0){
+        document.querySelector("#emailErorr")
+        .textContent = "لازم نكتب البيانات ديه";
+        input[4].style.borderColor = 'red';
     }
 
+    if(listen.value.trim().length === 0){
+        document.querySelector("#emailErorr")
+        .textContent = "لازم نكتب البيانات ديه";
+        input[5].style.borderColor = 'red';
+    }
 
+    if(program.value.trim().length === 0){
+        document.querySelector("#emailErorr")
+        .textContent = "لازم نكتب البيانات ديه";
+        input[5].style.borderColor = 'red';
+    }
+    if (isValid) {
+        const formData = {
+            name: name.value.trim(),
+            phone: phone.value.trim(),
+            email: email.value.trim(),
+            level: level.value.trim(),
+            program: program.value.trim(),
+            listen: listen.value.trim(),
+            scouting: scouting.value.trim()
+        };
+    
+        try {
+            const response = await fetch(
+                "http://localhost:3000/api/join",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(formData)
+                }
+            );
+    
+            const data = await response.json();
+    
+            if (!response.ok) {
+                throw new Error(data.message);
+            }
+    
+            console.log(data);
+    
+            localStorage.setItem("joinSuccess", "true");
+            window.location.href = "index.html";
+    
+        } catch (error) {
+            console.error("Join Form Error:", error);
+    
+            alert("حصل خطأ أثناء إرسال الطلب، حاول تاني.");
+        }
+    }
 });
 // =========================

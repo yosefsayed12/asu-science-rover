@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/ai-chat.css">
+    <link rel="stylesheet" href="css/up-event.css">
     
 
     <!-- <style>
@@ -26,7 +27,7 @@
 <body>
     <header>
         <nav>
-            <img src="assets/images/SCOUT.png" alt="scienceRoverLogo">
+            <a href="/" class="clan-logo"><img src="assets/images/SCOUT.png" alt="scienceRoverLogo"></a>
             <div class="nav-links">
                 <a href="#ama">الرئيسية</a>
                 <a href="#about-content">من نحن</a>
@@ -62,7 +63,93 @@
                 كلية العلوم، يهدف إلى إعداد جيل من الشباب يمتلك روح القيادة والعمل الجماعي والمسؤولية المجتمعية من خلال الأنشطة الكشفية والتطوعية والخدمية. تستند العشيرة إلى مبادئ الحركة الكشفية، وتسعى إلى تنمية مهارات أعضائها وصقل شخصياتهم ليكونوا عناصر مؤثرة في مجتمعهم. 
                 </p>
             </div>
-        </section>
+        </section> 
+<section class="upcoming-event" id="upcoming-event">
+
+    <div class="section-title">
+        <h2>الحدث القادم</h2>
+        <!-- <span></span> -->
+        <p>استعدوا للحدث القادم مع عشيرة جوالة كلية العلوم</p>
+    </div>
+
+
+    <div class="upcoming-content">
+        <!-- <div class="upcoming-icon">
+            🏕️
+        </div> -->
+
+        <!-- Event Name -->
+        <h3 id="upcoming-event-name">
+            حفل تسليم قيادة العشيرة
+        </h3>
+
+
+        <!-- Event Details -->
+        <div class="upcoming-details">
+
+            <span>
+                📅
+                <span id="upcoming-event-date">
+                    10 سبتمبر 2026
+                </span>
+            </span>
+
+            <span>
+                📍
+                <span id="upcoming-event-location">
+                    كلية العلوم - جامعة عين شمس
+                </span>
+            </span>
+
+        </div>
+
+
+        <!-- Countdown Title -->
+        <div class="countdown-title">
+            متبقي على الحدث
+        </div>
+
+
+        <!-- Countdown -->
+        <div class="upcoming-countdown">
+
+            <div class="countdown-unit">
+                <span id="event-days">00</span>
+                <small>يوم</small>
+            </div>
+
+            <span class="countdown-colon">:</span>
+
+            <div class="countdown-unit">
+                <span id="event-hours">00</span>
+                <small>ساعة</small>
+            </div>
+
+            <span class="countdown-colon">:</span>
+
+            <div class="countdown-unit">
+                <span id="event-minutes">00</span>
+                <small>دقيقة</small>
+            </div>
+
+            <span class="countdown-colon">:</span>
+
+            <div class="countdown-unit">
+                <span id="event-seconds">00</span>
+                <small>ثانية</small>
+            </div>
+
+        </div>
+
+
+        <!-- Button -->
+        <a href="#" class="upcoming-button" id="upcoming-event-button">
+            تفاصيل الحدث
+        </a>
+
+    </div>
+
+</section>
         <section class="gallery" id="gallery">
             <div class="section-title">
                 <h2>المعرض</h2>
@@ -129,7 +216,7 @@
         </div>
         <div class="event">
             <span>⛺️</span>
-            <p>معسكر العشيرة</p>
+            <p>معسكر اعداد القادة</p>
         </div>
         <div class="event">
             <span>⚔️</span>
@@ -211,7 +298,7 @@
     </main>
     <footer id = "contact">
         <div class="right-secttion">
-        <img src="assets/images/SCOUT.png" alt="logo">
+        <a href="" class="clan-logo"><img src="assets/images/SCOUT.png" alt="logo"></a>
             <p>عشيرة جوالة كلية العلوم
                 <span class="uni1">جامعة عين شمس</span>
             </p>
@@ -269,7 +356,7 @@
                 <span class="ai-icon"><i class="fa-solid fa-robot" style="color: rgb(86, 84, 87)"></i></span>
                 <div>
                     <h3>باند باول</h3>
-                    <span>اسألني عن الكلية أو العشيرة</span>
+                    <span>اسألني عن الكلية أو العشيرة (نسخة تجريبية)</span>
                 </div>
             </div>
 
@@ -309,5 +396,6 @@
 </div>
     <script src="js/main.js"></script>
     <script src="js/ai-chat.js"></script>
+    <script src="js/up-event.js"></script>
 </body>
 </html>

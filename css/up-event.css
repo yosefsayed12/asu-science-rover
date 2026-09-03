@@ -1,0 +1,260 @@
+.upcoming-event {
+    position: relative;
+    width: 100%;
+    padding: 80px 0px;
+    background: #1c1029;
+    overflow: hidden;
+    border-top: 2px solid #c79a32;
+    border-bottom: 2px solid #c79a32;
+}
+
+
+
+.upcoming-event::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #c79a32;
+    opacity: 0.025;
+    filter: blur(100px);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+
+
+.upcoming-event .section-title {
+    position: relative;
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.upcoming-event .section-title h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.upcoming-event .section-title span {
+    display: block;
+    width: 120px;
+    height: 2px;
+    margin: 10px auto 12px;
+    background: #c79a32;
+}
+
+.upcoming-event .section-title p {
+    margin: 0;
+    color: #aaa1b0;
+    font-size: 15px;
+}
+
+
+
+.upcoming-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 700px;
+    margin: auto;
+}
+
+
+
+/* .upcoming-icon {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    border: 1px solid rgba(199, 154, 50, 0.45);
+    border-radius: 50%;
+    background: rgba(199, 154, 50, 0.05);
+    font-size: 30px;
+    box-shadow: 0 0 25px rgba(199, 154, 50, 0.08);
+} */
+
+
+
+#upcoming-event-name {
+    margin: 0 0 15px;
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+
+/* -----------------------------------------------
+   Event Details
+------------------------------------------------ */
+
+.upcoming-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    color: #bdb4c3;
+    font-size: 14px;
+    margin-bottom: 35px;
+}
+
+.upcoming-details span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+/* -----------------------------------------------
+   Countdown Title
+------------------------------------------------ */
+
+.countdown-title {
+    color: #c79a32;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+
+/* -----------------------------------------------
+   Countdown
+------------------------------------------------ */
+
+.upcoming-countdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    direction: ltr;
+    margin-bottom: 35px;
+}
+
+
+/* Each number */
+
+.countdown-unit {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+
+/* Number */
+
+.countdown-unit span {
+    color: #ffffff;
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 1;
+    min-width: 35px;
+    text-align: center;
+}
+
+
+/* Unit name */
+
+.countdown-unit small {
+    color: #9e94a5;
+    font-size: 15px;
+    font-weight: 400;
+
+}
+
+
+/* Colon */
+
+.countdown-colon {
+    color: #c79a32;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 10px;
+    transform: translateY(-1px);
+}
+
+
+
+.upcoming-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 28px;
+    background: #c79a32;
+    color: #17101f;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.upcoming-button:hover {
+    background: #e0b84f;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(199, 154, 50, 0.18);
+}
+
+
+/* =================================================
+   MOBILE
+================================================= */
+
+@media (max-width: 600px) {
+    .upcoming-event {
+        padding: 70px 15px;
+
+    }
+
+    .upcoming-event .section-title h2 {
+        font-size: 27px;
+    }
+
+    .upcoming-event .section-title p {
+        font-size: 12px;
+    }
+
+    #upcoming-event-name {
+        font-size: 23px;
+    }
+
+    .upcoming-details {
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 30px;
+    }
+
+    .upcoming-countdown {
+        width: 100%;
+        gap: 0;
+    }
+
+    .countdown-unit {
+        gap: 3px;
+    }
+
+    .countdown-unit span {
+        font-size: 21px;
+        min-width: 27px;
+    }
+
+    .countdown-unit small {
+        font-size: 9px;
+    }
+
+    .countdown-colon {
+        font-size: 20px;
+        margin: 0 4px;
+    }
+
+    .upcoming-button {
+        padding: 10px 25px;
+    }
+}

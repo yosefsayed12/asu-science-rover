@@ -8,8 +8,8 @@ const events = {
         activities: [
             "ألعاب مائية",
             "مسابقات جماعية",
-            "جلسة سمر على الشاطئ",
-            "أنشطة كشفية وتحديات"
+            "التجديف",
+            "الترفية والاستمتاع"
         ],
         images: [
             "assets/images/sea1.jpg",
@@ -45,16 +45,22 @@ const events = {
         date: "30 أغسطس 2026",
         mainImage: "assets/images/tasleem-day.jpg",
         activities: [
-            "تكريم الأعضاء",
+            "تنصيب الأفراد",
             "عرض إنجازات العشيرة",
             "فقرات ترفيهية",
             "حفل الختام"
         ],
         images: [
-            "assets/images/tasleem-day.jpg",
-            "assets/images/tasleem-day.jpg",
-            "assets/images/tasleem-day.jpg",
-            "assets/images/tasleem-day.jpg"
+            "assets/images/tasleem1.jpg",
+            "assets/images/tasleem2.jpg",
+            "assets/images/tasleem3.jpg",
+            "assets/images/tasleem4.jpg",
+            "assets/images/tasleem5.jpg",
+            "assets/images/tasleem6.jpg",
+            "assets/images/tasleem7.jpg",
+            "assets/images/tasleem8.jpg",
+            "assets/images/tasleem9.jpg",
+            "assets/images/tasleem10.jpg"
         ]
     },
 
@@ -104,10 +110,10 @@ const events = {
         date: "10 أغسطس 2026",
         mainImage: "assets/images/iftar-day.jpg",
         activities: [
-            "الخدمة العامة",
-            "المساعدات المجتمعية",
-            "الأنشطة الخيرية",
-            "العمل الجماعي"
+            "الانشطة الترفيهية",
+            "الافطار الجماعي",
+            "تجهيز المكان",
+            "التواصل والمشاركة"
         ],
         images: [
             "assets/images/iftar1.jpg",
@@ -125,16 +131,20 @@ const events = {
         date: "10 أغسطس 2026",
         mainImage: "assets/images/camp-day.jpg",
         activities: [
-            "الخدمة العامة",
-            "المساعدات المجتمعية",
-            "الأنشطة الخيرية",
+            "تطوير المهارات",
+            "التخييم",
+            "القيادة وتحمل المسئولية",
             "العمل الجماعي"
         ],
         images: [
-            "assets/images/camp-day.jpg",
-            "assets/images/camp-day.jpg",
-            "assets/images/camp-day.jpg",
-            "assets/images/camp-day.jpg"
+            "assets/images/camp2.jpg",
+            "assets/images/camp3.jpg",
+            "assets/images/camp1.jpg",
+            "assets/images/camp5.jpg",
+            "assets/images/camp6.jpg",
+            "assets/images/camp7.jpg",
+            "assets/images/camp8.jpg",
+            "assets/images/camp4.jpg"
         ]
     },
 
@@ -142,13 +152,13 @@ const events = {
         title: "الوفدية الـ 55 لعشائر الجامعة",
         description:
             "مشاركة عشيرة جوالة كلية العلوم بالوفدية وحصولها على المستوى الاول في جميع المستويات",
-        date: "10 أغسطس 2026",
+        date: "10 فبراير 2026",
         mainImage: "assets/images/wafdya-day.jpg",
         activities: [
-            "الخدمة العامة",
-            "المساعدات المجتمعية",
-            "الأنشطة الخيرية",
-            "العمل الجماعي"
+            "تنمية المهارات",
+            "العمل الجماعي",
+            "روح التحدي",
+            "المنافسات"
         ],
         images: [
             "assets/images/wafdya.jpg",

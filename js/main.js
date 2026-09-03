@@ -23,7 +23,7 @@ const committees = {
     hr: {
         title: "لجنة السكرتارية",
 
-        description: "مسؤولة عن ",
+        description: "مسؤولة عن متابعة الافراد وسجلاتهم",
 
         tasks: ["متابعة وتقييم اعضاء العشيرة",
                 "تسجيل احتايجات الرهط",
@@ -36,11 +36,11 @@ const committees = {
     pr: {
         title: "لجنة الخدمة العامة",
 
-        description: "",
+        description: "مسئوولة عن تنظيم الانشطة الخيرية التي تهدف لخدمة المجتمع.",
 
-        tasks: [],
+        tasks: ["تنظيم الانشطة الخيرية"],
 
-        skills: ""
+        skills: "التواصل - التنظيم - التفاوض"
     },
 
     finan: {
@@ -172,14 +172,14 @@ const galleryData = [
         link: "gallery-details.html?event=iftar"
     },
     {
-        title: "معسكر العشيرة",
-        description: "التخييم وتطوير المهارات",
+        title: "معسكر اعداد القادة",
+        description: "قادة اليوم... صُناع الغد",
         image: "assets/images/camp-day.jpg",
         link: "gallery-details.html?event=camp"
     },
     {
         // title: "الوفدية الـ55 لعشائر الجامعة",
-        title: "الدورة الكشفية الـ 55 والارشادية الـ 43 لعشائر الجامعة",
+        title: "الدورة الكشفية الـ 55 والارشادية الـ 43",
         description: "التنافس بين عشاير الجامعة",
         image: "assets/images/wafdya-day.jpg",
         link: "gallery-details.html?event=wafdya"

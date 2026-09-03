@@ -115,3 +115,8 @@ button:hover, nav a:hover{
         box-shadow: none;
     }
 }
+
+.clan-logo:hover {
+    box-shadow: none;
+    transform: none;
+}
