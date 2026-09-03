@@ -1,10 +1,25 @@
-const upcomingEvent = {
-    name: "حفل تسليم قيادة العشيرة",
-    date: "2026-09-10T09:00:00",
-    dateText: "10 سبتمبر 2026",
-    location: "كلية العلوم - جامعة عين شمس",
-    link: "#"
-};
+const upcomingEvents =[
+    {
+        name: "استقبــال الطــلاب",
+        date: "2026-09-06T09:00:00",
+        dateText: "6 سبتمبر 2026",
+        location: "كلية العلوم - جامعة عين شمس",
+        link: "#"
+    },
+    // {
+    //     name: "حفل تسليم قيادة العشيرة",
+    //     date: "2026-09-20T09:00:00",
+    //     dateText: "10 سبتمبر 2026",
+    //     location: "كلية العلوم - جامعة عين شمس",
+    //     link: "#"
+    // }
+];
+
+const now = new Date().getTime();
+
+const upcomingEvent = upcomingEvents
+    .filter(event => new Date(event.date).getTime() > now)
+    .sort( (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())[0];
 
 const eventName =
     document.getElementById("upcoming-event-name");

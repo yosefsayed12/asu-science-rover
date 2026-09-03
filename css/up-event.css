@@ -209,8 +209,7 @@
 
 @media (max-width: 600px) {
     .upcoming-event {
-        padding: 70px 15px;
-
+        padding: 70px 0px;
     }
 
     .upcoming-event .section-title h2 {
