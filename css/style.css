@@ -1010,3 +1010,21 @@ body.modal-open {
         opacity: 1;
     }
 }
+
+/* .popup {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: min(390px, calc(100% - 30px));
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 15px 17px;
+    background: #180d24;
+    border: 1px solid rgba(199, 154, 50, 0.55);
+    border-radius: 12px;
+    box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.4),
+                0 0 20px rgba(199, 154, 50, 0.08);
+    direction: rtl;
+    z-index: 99999999;
+} */

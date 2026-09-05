@@ -69,7 +69,7 @@ const events = {
         description:
             "يوم مليء بالإبداع والعمل الجماعي، شارك خلاله أعضاء العشيرة في رسم وتجميل أحد جدران الكلية.",
         date: "20 أغسطس 2026",
-        mainImage: "images/wall-painting.jpg",
+        mainImage: "../assets/images/wall-day.jpg",
         activities: [
             "تجهيز الحائط",
             "اختيار التصميم",
@@ -77,9 +77,9 @@ const events = {
             "العمل الجماعي"
         ],
         images: [
-            "images/painting1.jpg",
-            "images/painting2.jpg",
-            "images/painting3.jpg"
+            // "images/painting1.jpg",
+            // "images/painting2.jpg",
+            // "images/painting3.jpg"
         ]
     },
 
@@ -88,7 +88,7 @@ const events = {
         description:
             "يوم خدمي هدفه نشر الخير والمساهمة في خدمة المجتمع من خلال مجموعة من الأنشطة والمبادرات.",
         date: "10 أغسطس 2026",
-        mainImage: "images/good-day.jpg",
+        mainImage: "assets/images/5aar-day.jpg",
         activities: [
             "الخدمة العامة",
             "المساعدات المجتمعية",
@@ -96,10 +96,10 @@ const events = {
             "العمل الجماعي"
         ],
         images: [
-            "images/charity1.jpg",
-            "images/charity2.jpg",
-            "images/charity3.jpg",
-            "images/charity4.jpg"
+            // "images/charity1.jpg",
+            // "images/charity2.jpg",
+            // "images/charity3.jpg",
+            // "images/charity4.jpg"
         ]
     },
 
