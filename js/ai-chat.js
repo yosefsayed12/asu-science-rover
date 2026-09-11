@@ -82,7 +82,7 @@ function addMessage(message, type) {
     icon.classList.add("message-icon");
 
     icon.textContent =
-        type === "bot" ? "🤖" : "👤";
+        type === "bot" ? `<i class="fa-solid fa-robot" style="color: rgb(86, 84, 87)"></i>` : "👤";
 
     const bubble =
         document.createElement("div");

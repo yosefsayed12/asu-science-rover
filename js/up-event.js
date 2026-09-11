@@ -1,10 +1,11 @@
 const upcomingEvents =[
     {
         name: "استقبــال الطــلاب",
-        date: "2026-09-06T09:00:00",
+        date: "2026-09-07T09:00:00",
         dateText: "6 سبتمبر 2026",
         location: "كلية العلوم - جامعة عين شمس",
-        link: "#"
+        link: "#",
+        duration: "7"
     },
     // {
     //     name: "حفل تسليم قيادة العشيرة",
@@ -18,7 +19,7 @@ const upcomingEvents =[
 const now = new Date().getTime();
 
 const upcomingEvent = upcomingEvents
-    .filter(event => new Date(event.date).getTime() > now)
+    // .filter(event => new Date(event.date).getTime() > now)
     .sort( (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())[0];
 
 const eventName =
@@ -81,8 +82,7 @@ function updateEventCountdown() {
 
         seconds.textContent = "00";
 
-        document.querySelector(".countdown-title")
-            .textContent = "الحدث بدأ! 🎉";
+        document.querySelector(".countdown-title").textContent = "الحدث بدأ! 🎉";
 
         return;
 
