@@ -68,19 +68,19 @@ form.addEventListener("submit", async(e) =>{
     }
 
     if(scouting.value.trim().length === 0){
-        document.querySelector("#emailErorr")
+        document.querySelector("#scoutingErorr")
         .textContent = "لازم نكتب البيانات ديه";
         input[4].style.borderColor = 'red';
     }
 
     if(listen.value.trim().length === 0){
-        document.querySelector("#emailErorr")
+        document.querySelector("#listenErorr")
         .textContent = "لازم نكتب البيانات ديه";
-        input[5].style.borderColor = 'red';
+        input[6].style.borderColor = 'red';
     }
 
     if(program.value.trim().length === 0){
-        document.querySelector("#emailErorr")
+        document.querySelector("#programErorr")
         .textContent = "لازم نكتب البيانات ديه";
         input[5].style.borderColor = 'red';
     }

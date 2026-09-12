@@ -1,15 +1,22 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
 }
 
 html {
     scroll-behavior: smooth;
+    width: 100%;
 }
 
 body{
     background-color: #0F081A;    
     color: #FFFFFF;
+    min-width: 100%;
 }
 
 main, header {
@@ -63,23 +70,53 @@ main .hero img{
 }
 
 .popup {
-    padding: 20px;
-    margin: 5% 35%;
-    text-align: center;
     display: none;
     position: fixed;
-    top: 0;
-    z-index: 999;
-    width: 25%;
-    background-color: rgbA(12, 3, 51, .6);
-    border-radius: 15px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px;
+    padding: 30px 25px;
+    background: #1E1530;
+    border: 2px solid #F4C430;
+    border-radius: 18px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
 }
 
-.popup button {
-
-    width: 15%;
-    margin: 10px;
+.popup p {
+    margin: 8px 0;
+    font-size: 18px;
+    line-height: 1.6;
 }
+
+.popup p:first-child {
+    color: #F4C430;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.popup .btn {
+    margin-top: 20px;
+    padding: 10px 30px;
+    background: #F4C430;
+    color: #1E1530;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.popup .btn:hover {
+    background: #C7921B;
+    transform: translateY(-2px);
+}
+
 /* #join {
     margin-right: 50%;
 }
@@ -1011,20 +1048,19 @@ body.modal-open {
     }
 }
 
-/* .popup {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    width: min(390px, calc(100% - 30px));
-    display: flex;
-    align-items: center;
-    gap: 13px;
-    padding: 15px 17px;
-    background: #180d24;
-    border: 1px solid rgba(199, 154, 50, 0.55);
-    border-radius: 12px;
-    box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.4),
-                0 0 20px rgba(199, 154, 50, 0.08);
-    direction: rtl;
-    z-index: 99999999;
-} */
+@media (max-width: 400px) {
+    .popup {
+        padding: 15px;
+    }
+
+    .popup-content {
+        width: 100%;
+        padding: 25px 18px;
+        border-radius: 15px;
+    }
+
+    .popup-content .btn {
+        width: 100%;
+    }
+
+}

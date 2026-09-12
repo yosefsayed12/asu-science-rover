@@ -1,0 +1,54 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<urlset xmlns = "http://sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>https://asu-science-rover.vercel.app/</loc>
+    </url>
+
+    <url>
+        <loc>https://asu-science-rover.vercel.app/gallery-details.html</loc>
+    </url>
+
+
+    <url>
+        <loc>https://asu-science-rover.vercel.app/gallery-details.html?event=sea</loc>
+    </url>
+
+    <url>
+        <loc>https://asu-science-rover.vercel.app/gallery-details.html?event=start</loc>
+    </url>
+
+    <url>
+        <loc>https://asu-science-rover.vercel.app/gallery-details.html?event=closing</loc>
+    </url>
+
+    <url>
+        <loc>https://asu-science-rover.vercel.app/gallery-details.html?event=painting</loc>
+    </url>
+
+    <url>
+        <loc>https://asu-science-rover.vercel.app/gallery-details.html?event=charity</loc>
+    </url>
+
+    <url>
+        <loc>https://asu-science-rover.vercel.app/gallery-details.html?event=iftar</loc>
+    </url>
+
+    <url>
+        <loc>https://asu-science-rover.vercel.app/gallery-details.html?event=camp</loc>
+    </url>
+
+    <url>
+        <loc>https://asu-science-rover.vercel.app/gallery-details.html?event=wafdya</loc>
+    </url>
+
+    <url>
+        <loc>https://asu-science-rover.vercel.app/joinus.html</loc>
+    </url>
+
+    <url>
+        <loc>https://asu-science-rover.vercel.app/map.html</loc>
+    </url>
+
+</urlset>
