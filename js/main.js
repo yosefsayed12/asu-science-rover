@@ -61,9 +61,6 @@ const committees = {
 moreButtons.forEach(button => {
     button.addEventListener("click", () => {
 
-        console.log("scroll: ", window.scrollY);
-        console.log("modal: ", modal);
-        console.log("modal react: ", modal.getBoundingClientRect());
         const committeeName = button.dataset.committee;
         const committee = committees[committeeName];
 
@@ -125,11 +122,7 @@ closePop.addEventListener('click', () => {
 const menuBtn = document.getElementById("menu-btn");
 const navLinks = document.querySelector(".nav-links");
 
-console.log(menuBtn);
-console.log(navLinks.children);
-
 menuBtn.addEventListener("click", () => {
-    console.log("clicked");
     navLinks.classList.toggle("active");
 });
 
