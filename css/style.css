@@ -1048,7 +1048,7 @@ body.modal-open {
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 380px) {
     .popup {
         padding: 15px;
     }
@@ -1063,4 +1063,8 @@ body.modal-open {
         width: 100%;
     }
 
+    
+    .gallery-overlay h3 {
+        font-size: 40px;
+    }
 }
