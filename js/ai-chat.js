@@ -332,3 +332,10 @@ aiForm.addEventListener("submit", async (event) => {
     }
 
 });
+
+// ================================================
+closeBtn = document.querySelector("#closeBtn");
+bubble = document.querySelector(".bubble");
+closeBtn.addEventListener("click", () => {
+    bubble.style.display = "none";
+})

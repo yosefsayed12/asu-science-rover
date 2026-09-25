@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ASU Science Rover | Dashboard </title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/fonts.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar" id="sidebar">
+        <div class="logo">
+            <img src="assets/images/SCOUT.png" alt="ASU Science Rover">
+            <div>
+                <h2>جوالة كلية العلوم</h2>
+                <span>لوحة التحكم</span>
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <p class="menu-title">الرئيسية</p>
+
+            <a href="#" class="nav-link active">
+                <i class="fa-solid fa-house"></i>
+                <span>لوحة التحكم</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>الفعاليات</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="fa-solid fa-images"></i>
+                <span>معرض الصور</span>
+            </a>
+
+
+            <p class="menu-title">الإدارة</p>
+
+            <a href="#" class="nav-link">
+                <i class="fa-solid fa-users"></i>
+                <span>الأعضاء</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="fa-solid fa-bullhorn"></i>
+                <span>الإعلانات</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="fa-solid fa-robot"></i>
+                <span>معرفة الذكاء الاصطناعي</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="fa-solid fa-envelope"></i>
+                <span>الرسائل</span>
+            </a>
+
+
+            <p class="menu-title">النظام</p>
+
+            <a href="#" class="nav-link">
+                <i class="fa-solid fa-gear"></i>
+                <span>الإعدادات</span>
+            </a>
+
+        </nav>
+
+
+        <!-- SIDEBAR BOTTOM -->
+
+        <div class="sidebar-bottom">
+
+            <a href="#" class="nav-link">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                <span>عرض الموقع</span>
+            </a>
+
+            <a href="#" class="nav-link logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>تسجيل الخروج</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <button class="menu-btn" id="menuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+
+            <div class="topbar-right">
+
+                <button class="notification">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span></span>
+
+                </button>
+
+
+                <div class="profile">
+
+                    <div class="avatar">
+                        Y 
+                    </div>
+
+                    <div class="profile-info">
+                        <strong>Yosef Sayed</strong>
+                        <small>Adminstrator</small>
+                    </div>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+            </div>
+        </header>
+
+        <section class="content">
+            <div class="page-header">
+                <div>
+                    <p class="welcome"> أهلاً بيك 👋 </p>
+
+                    <h1>لوحة التحكم</h1>
+
+                    <p class="subtitle">تابع وأدر محتوى موقع ASU Science Rover من هنا.</p>
+                </div>
+
+
+                <button class="primary-btn">
+                    <i class="fa-solid fa-plus"></i>
+                        إضافة فعالية 
+                </button>
+            </div>
+
+
+
+            <!-- ================= STATS ================= -->
+
+            <div class="stats">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            إجمالي الفعاليات
+                        </span>
+
+                        <h2>
+                            12
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-images"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            إجمالي الصور
+                        </span>
+
+                        <h2>
+                            86
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            الأعضاء
+                        </span>
+
+                        <h2>
+                            24
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            الرسائل
+                        </span>
+
+                        <h2>
+                            7
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= MAIN GRID ================= -->
+
+            <div class="dashboard-grid">
+
+
+                <!-- RECENT EVENTS -->
+
+                <div class="panel events-panel">
+
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2>
+                                آخر الفعاليات
+                            </h2>
+
+                            <p>
+                                أحدث الفعاليات المضافة إلى الموقع.
+                            </p>
+
+                        </div>
+
+
+                        <a href="#">
+                            عرض الكل
+                        </a>
+
+                    </div>
+
+
+
+                    <div class="event-list">
+
+
+                        <!-- EVENT -->
+
+                        <div class="event">
+
+                            <div class="event-image">
+
+                                <img
+                                    src="marine-day.jpg"
+                                    alt="اليوم البحري"
+                                >
+
+                            </div>
+
+
+                            <div class="event-info">
+
+                                <h3>
+                                    اليوم البحري
+                                </h3>
+
+                                <p>
+
+                                    <i class="fa-regular fa-calendar"></i>
+
+                                    12 سبتمبر 2026
+
+                                </p>
+
+
+                                <span class="status published">
+                                    منشورة
+                                </span>
+
+                            </div>
+
+
+                            <button class="more-btn">
+
+                                <i class="fa-solid fa-ellipsis"></i>
+
+                            </button>
+
+                        </div>
+
+
+
+                        <!-- EVENT -->
+
+                        <div class="event">
+
+                            <div class="event-image">
+                                <img
+                                    src="reception.jpg"
+                                    alt="استقبال الطلاب"
+                                >
+
+                            </div>
+
+
+                            <div class="event-info">
+
+                                <h3>
+                                    استقبال الطلاب
+                                </h3>
+
+                                <p>
+
+                                    <i class="fa-regular fa-calendar"></i>
+
+                                    5 سبتمبر 2026
+
+                                </p>
+
+
+                                <span class="status published">
+                                    منشورة
+                                </span>
+
+                            </div>
+
+
+                            <button class="more-btn">
+
+                                <i class="fa-solid fa-ellipsis"></i>
+
+                            </button>
+
+                        </div>
+
+
+
+                        <!-- EVENT -->
+
+                        <div class="event">
+
+                            <div class="event-image">
+
+                                <img
+                                    src="art.jpg"
+                                    alt="المعرض الفني"
+                                >
+
+                            </div>
+
+
+                            <div class="event-info">
+
+                                <h3>
+                                    المعرض الفني
+                                </h3>
+
+                                <p>
+
+                                    <i class="fa-regular fa-calendar"></i>
+
+                                    26 أبريل 2026
+
+                                </p>
+
+
+                                <span class="status published">
+                                    منشورة
+                                </span>
+
+                            </div>
+
+
+                            <button class="more-btn">
+
+                                <i class="fa-solid fa-ellipsis"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- QUICK ACTIONS -->
+
+                <div class="panel quick-panel">
+
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2>
+                                إجراءات سريعة
+                            </h2>
+
+                            <p>
+                                اختصارات لإدارة الموقع.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="quick-actions">
+
+
+                        <button class="quick-action">
+
+                            <div class="quick-icon">
+
+                                <i class="fa-solid fa-calendar-plus"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    إضافة فعالية
+                                </strong>
+
+                                <span>
+                                    إنشاء فعالية جديدة
+                                </span>
+
+                            </div>
+
+
+                            <i class="fa-solid fa-chevron-left"></i>
+
+                        </button>
+
+
+
+                        <button class="quick-action">
+
+                            <div class="quick-icon">
+
+                                <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    رفع صور
+                                </strong>
+
+                                <span>
+                                    إضافة صور إلى المعرض
+                                </span>
+
+                            </div>
+
+
+                            <i class="fa-solid fa-chevron-left"></i>
+
+                        </button>
+
+
+
+                        <button class="quick-action">
+
+                            <div class="quick-icon">
+
+                                <i class="fa-solid fa-bullhorn"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    إضافة إعلان
+                                </strong>
+
+                                <span>
+                                    نشر إعلان جديد
+                                </span>
+
+                            </div>
+
+
+                            <i class="fa-solid fa-chevron-left"></i>
+
+                        </button>
+
+
+
+                        <button class="quick-action">
+
+                            <div class="quick-icon">
+
+                                <i class="fa-solid fa-robot"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    معرفة الذكاء الاصطناعي
+                                </strong>
+
+                                <span>
+                                    إضافة معلومة جديدة للـ Rover
+                                </span>
+
+                            </div>
+
+
+                            <i class="fa-solid fa-chevron-left"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= BOTTOM GRID ================= -->
+
+            <div class="bottom-grid">
+
+
+                <!-- WEBSITE STATUS -->
+
+                <div class="panel">
+
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2>
+                                حالة الموقع
+                            </h2>
+
+                            <p>
+                                معلومات الموقع الحالية.
+                            </p>
+
+                        </div>
+
+
+                        <span class="online">
+
+                            <span></span>
+
+                            يعمل
+
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="status-row">
+
+                        <span>
+                            الموقع
+                        </span>
+
+                        <strong>
+                            ASU Science Rover
+                        </strong>
+
+                    </div>
+
+
+                    <div class="status-row">
+
+                        <span>
+                            آخر تحديث
+                        </span>
+
+                        <strong>
+                            اليوم، 5:30 م
+                        </strong>
+
+                    </div>
+
+
+                    <div class="status-row">
+
+                        <span>
+                            المساعد الذكي
+                        </span>
+
+                        <strong class="active-text">
+                            يعمل
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MESSAGES -->
+
+                <div class="panel">
+
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2>
+                                آخر الرسائل
+                            </h2>
+
+                            <p>
+                                أحدث الرسائل الواردة.
+                            </p>
+
+                        </div>
+
+
+                        <a href="#">
+                            عرض الكل
+                        </a>
+
+                    </div>
+
+
+
+                    <div class="message">
+
+
+                        <div class="message-avatar">
+                            أ
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                أحمد محمد
+                            </strong>
+
+                            <p>
+                                استفسار عن الانضمام للعشيرة
+                            </p>
+
+                        </div>
+                        <small>
+                            منذ 10 د
+                        </small>
+
+                    </div>
+
+
+
+                    <div class="message">
+
+
+                        <div class="message-avatar">
+                            س
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                سارة علي
+                            </strong>
+
+                            <p>
+                                استفسار عن فريق الميديا
+                            </p>
+
+                        </div>
+
+
+                        <small>
+                            منذ ساعتين
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>
