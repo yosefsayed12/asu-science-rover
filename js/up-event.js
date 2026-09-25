@@ -11,7 +11,7 @@ const upcomingEvents =[
     {
         name: "حــفل تسليــم قيــادة العشــيرة",
         date: "2026-10-01T16:00:00",
-        dateText: "6 سبتمبر 2026",
+        dateText: "1 أكتوبر 2026",
         location: "كلية العلوم - جامعة عين شمس",
         link: "#",
         duration: "7"
