@@ -111,7 +111,7 @@ form.addEventListener("submit", async(e) =>{
             email: email.value.trim(),
             scouting: scouting.value.trim(),
             exp: exp.value.trim(),
-            gender: gender,
+            gender: gender.value,
             level: level.value.trim(),
             program: program.value.trim(),
             listen: listen.value.trim()
