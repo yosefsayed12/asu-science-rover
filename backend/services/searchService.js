@@ -57,6 +57,7 @@ const synonyms = {
 
     "عشيرة": [
         "العشيرة",
+        "العشيره",
         "جوالة",
         "الجوالة",
     ],
@@ -207,7 +208,7 @@ function calculateBroadScore(question, content) {
         // Exact word
         if (
             normalizedContent.includes(
-                 `${word}` 
+                `${word}` 
             )
         ) {
             matchedWords++;

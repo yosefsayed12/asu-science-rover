@@ -1,0 +1,640 @@
+:root {
+    --purple-dark: #10091b;
+    --purple: #5e3a9e;
+    --purple-light: #7952b3;
+
+    --gold: #f4c430;
+    --gold-dark: #c7921b;
+
+    --white: #ffffff;
+    --cream: #faf9f5;
+    --text: #201b26;
+    --muted: #77727c;
+
+    --border: #e4e0e8;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: "Cairo", sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(94, 58, 158, 0.35),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom left,
+            rgba(244, 196, 48, 0.08),
+            transparent 30%
+        ),
+        var(--purple-dark);
+
+    color: var(--text);
+
+    min-height: 100vh;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.registration-page {
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    position: relative;
+    width: min(1100px, 94%);
+    height: 260px;
+
+    margin: 25px auto 0;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(16, 9, 27, 0.95),
+            rgba(16, 9, 27, 0.55)
+        ),
+        url("../assets/images/photo_2026-09-29_18-58-09.jpg") center / cover no-repeat;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+
+/* لو عندك صورة مختلفة للـ hero */
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(94, 58, 158, 0.45),
+            transparent 60%
+        );
+}
+
+
+.logo {
+    position: absolute;
+
+    top: 25px;
+    right: 30px;
+
+    width: 95px;
+
+    z-index: 2;
+}
+
+
+.hero-content {
+    position: absolute;
+    bottom: 35px;
+    right: 40px;
+
+    z-index: 3;
+
+    color: white;
+}
+
+
+.hero-content h1 {
+    font-size: clamp(28px, 4vw, 48px);
+
+    font-weight: 700;
+
+    color: var(--gold);
+
+    margin-bottom: 3px;
+}
+
+
+.hero-content p {
+    font-size: clamp(20px, 3vw, 32px);
+
+    font-weight: 500;
+
+    color: white;
+}
+
+
+/* =========================
+   REGISTRATION SECTION
+========================= */
+
+.registration-section {
+    width: min(800px, 92%);
+
+    margin: 60px auto 80px;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.page-title {
+    text-align: center;
+
+    color: white;
+
+    margin-bottom: 35px;
+}
+
+
+.title-icon {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 55px;
+    height: 55px;
+
+    margin-bottom: 12px;
+
+    border-radius: 50%;
+
+    background: rgba(244, 196, 48, 0.12);
+
+    color: var(--gold);
+
+    font-size: 25px;
+
+    border: 1px solid rgba(244, 196, 48, 0.25);
+}
+
+
+.page-title h2 {
+    font-size: clamp(25px, 5vw, 38px);
+
+    line-height: 1.5;
+
+    font-weight: 800;
+}
+
+
+.page-title > p {
+    font-size: 21px;
+
+    color: var(--gold);
+
+    font-weight: 700;
+}
+
+
+.title-line {
+    width: 70px;
+    height: 3px;
+
+    margin: 18px auto;
+
+    border-radius: 10px;
+
+    background: var(--gold);
+}
+
+
+.intro {
+    color: rgba(255, 255, 255, 0.72);
+
+    font-size: 15px !important;
+
+    line-height: 1.9;
+
+    font-weight: 400 !important;
+}
+
+.gender-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+
+.gender-option {
+    cursor: pointer;
+}
+
+
+.gender-option input {
+    display: none;
+}
+
+
+.gender-card {
+    height: 90px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    border: 1.5px solid #d2cec3;
+    border-radius: 14px;
+
+    background: #f3f0e8;
+
+    color: #77727c;
+
+    transition: 0.25s;
+}
+
+
+.gender-card i {
+    font-size: 24px;
+}
+
+
+.gender-card span {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* Selected */
+
+.gender-option input:checked + .gender-card {
+    border-color: #5e3a9e;
+
+    background: rgba(94, 58, 158, 0.1);
+
+    color: #5e3a9e;
+
+    box-shadow:
+        0 0 0 3px rgba(94, 58, 158, 0.08);
+}
+
+
+/* Hover */
+
+.gender-option:hover .gender-card {
+    border-color: #7952b3;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   FORM CARD
+========================= */
+
+.form-card {
+    background: #E8E4D8;
+
+    border-radius: 25px;
+
+    padding: 38px;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================
+   FORM SECTION
+========================= */
+
+.form-section {
+    margin-bottom: 35px;
+
+    padding-bottom: 30px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+.form-section:last-of-type {
+    border-bottom: none;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 25px;
+}
+
+
+.section-title > span {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: rgba(94, 58, 158, 0.1);
+
+    color: var(--purple);
+
+    font-size: 20px;
+}
+
+.section-title h3 {
+    font-size: 19px;
+
+    color: var(--text);
+
+    font-weight: 800;
+}
+
+
+.section-title p {
+    font-size: 12px;
+
+    color: var(--muted);
+
+    margin-top: 2px;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.input-group {
+    margin-bottom: 21px;
+}
+
+
+.input-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: var(--text);
+}
+
+
+.input-wrapper {
+    position: relative;
+}
+
+
+.input-wrapper > i {
+    position: absolute;
+
+    right: 17px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #8c8792;
+
+    pointer-events: none;
+
+    font-size: 15px;
+}
+
+
+.input-wrapper input,
+.input-wrapper select {
+    width: 100%;
+
+    height: 56px;
+
+    padding: 0 48px 0 17px;
+
+    border: 1.5px solid #ddd8e2;
+
+    border-radius: 13px;
+
+    background: white;
+
+    font-family: "Cairo", sans-serif;
+
+    font-size: 14px;
+
+    color: var(--text);
+
+    outline: none;
+
+    transition: 0.25s;
+}
+
+
+.input-wrapper input::placeholder {
+    color: #aaa5ad;
+}
+
+
+.input-wrapper input:focus,
+.input-wrapper select:focus {
+    border-color: var(--purple);
+
+    box-shadow:
+        0 0 0 4px rgba(94, 58, 158, 0.1);
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.submit-btn {
+    width: 100%;
+
+    height: 58px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple),
+            #442477
+        );
+
+    color: white;
+
+    font-family: "Cairo", sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 10px 25px rgba(94, 58, 158, 0.25);
+}
+
+
+.submit-btn i {
+    transition: 0.3s;
+}
+
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 15px 30px rgba(94, 58, 158, 0.35);
+}
+
+
+.submit-btn:hover i {
+    transform: translateX(-5px);
+}
+
+
+.form-note {
+    text-align: center;
+
+    margin-top: 15px;
+
+    font-size: 11px;
+
+    color: #918c95;
+}
+
+
+.form-note i {
+    margin-left: 5px;
+
+    color: var(--purple);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .hero {
+        width: 94%;
+
+        height: 210px;
+
+        margin-top: 12px;
+
+        border-radius: 18px;
+    }
+
+
+    .logo {
+        width: 75px;
+
+        top: 18px;
+        right: 18px;
+    }
+
+
+    .hero-content {
+        right: 22px;
+
+        bottom: 25px;
+    }
+
+
+    .hero-content h1 {
+        font-size: 27px;
+    }
+
+
+    .hero-content p {
+        font-size: 20px;
+    }
+
+
+    .registration-section {
+        width: 94%;
+
+        margin-top: 40px;
+    }
+
+
+    .page-title h2 {
+        font-size: 25px;
+    }
+
+
+    .page-title > p {
+        font-size: 18px;
+    }
+
+
+    .form-card {
+        padding: 25px 18px;
+
+        border-radius: 20px;
+    }
+
+
+    .section-title {
+        gap: 11px;
+    }
+
+
+    .section-title > span {
+        width: 43px;
+        height: 43px;
+
+        border-radius: 12px;
+    }
+
+
+    .input-wrapper input,
+    .input-wrapper select {
+        height: 53px;
+    }
+}
+
+.erorr {
+    font-size: 10px;
+    color: red;
+}

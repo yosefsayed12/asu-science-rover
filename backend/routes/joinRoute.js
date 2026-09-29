@@ -12,19 +12,23 @@ router.post("/", async (req, res) => {
             program,
             email,
             scouting,
-            listen
+            listen,
+            gender,
+            exp
         } = req.body;
 
         const message = 
 `📝 طلب انضمام جديد
 
 👤 الاسم: ${name}
+👨 النوع: ${gender}
 📱 رقم التليفون: ${phone}
 🎓 الفرقة: ${level}
 🔬 الشعبة / البرنامج: ${program}
 📧 البريد الإلكتروني: ${email}
 ⛺ شارك في الجوالة / الكشافة قبل كده؟ ${scouting}
-📢 سمع عننا منين؟ ${listen}`;
+📢 سمع عننا منين؟ ${listen}
+🏆 شارك في انشطة قبل كدا؟ ${exp} `;
 
         await sendTelegramMessage(message);
 
