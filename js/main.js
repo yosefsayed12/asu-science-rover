@@ -276,3 +276,44 @@ events.forEach((event, index) => {
     });
 
 });
+
+
+
+
+
+
+const closeMenuBtn = document.getElementById("close-menu");
+const menuOverlay = document.getElementById("menu-overlay");
+
+function openMenu() {
+    navLinks.classList.add("active");
+    menuOverlay.classList.add("active");
+    document.body.classList.add("menu-open");
+
+    menuBtn.setAttribute("aria-expanded", "true");
+}
+
+function closeMenu() {
+    navLinks.classList.remove("active");
+    menuOverlay.classList.remove("active");
+    document.body.classList.remove("menu-open");
+
+    menuBtn.setAttribute("aria-expanded", "false");
+}
+
+menuBtn.addEventListener("click", openMenu);
+closeMenuBtn.addEventListener("click", closeMenu);
+menuOverlay.addEventListener("click", closeMenu);
+
+// إغلاق القائمة بعد اختيار أي صفحة
+navLinks.querySelectorAll("a:not(.social-icons a)")
+    .forEach(link => {
+        link.addEventListener("click", closeMenu);
+    });
+
+// إغلاق القائمة بزر Escape
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+        closeMenu();
+    }
+});
