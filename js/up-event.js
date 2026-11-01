@@ -1,4 +1,5 @@
-const eventInfo = window.eventsData;
+const eventInfo = window.eventsData || [];
+
 
 /* =================================
    DOM ELEMENTS
@@ -68,25 +69,62 @@ function formatEventDate(date) {
 
 function getEventLink(event) {
 
-    return event.link || `event.html?id=${encodeURIComponent(event.id)}`;
+    return event.link ||
+        `event.html?id=${encodeURIComponent(event.id)}`;
 
 }
 
 
-// Check if event is upcoming
+// Get event start time
+
+function getEventStart(event) {
+
+    return new Date(event.date).getTime();
+
+}
+
+
+// Get event end time
+
+function getEventEnd(event) {
+
+    return new Date(event.endDate).getTime();
+
+}
+
+
+/* =================================
+   EVENT STATUS
+================================= */
+
+// Upcoming Event
 
 function isUpcoming(event) {
 
-    return new Date(event.date).getTime() > Date.now();
+    return getEventStart(event) > Date.now();
 
 }
 
 
-// Check if event is previous
+// Ongoing Event
+
+function isOngoing(event) {
+
+    const now = Date.now();
+
+    return (
+        getEventStart(event) <= now &&
+        getEventEnd(event) > now
+    );
+
+}
+
+
+// Previous Event
 
 function isPrevious(event) {
 
-    return new Date(event.date).getTime() <= Date.now();
+    return getEventEnd(event) <= Date.now();
 
 }
 
@@ -95,6 +133,8 @@ function isPrevious(event) {
    SORT EVENTS
 ================================= */
 
+// Get Upcoming Events
+
 function getUpcomingEvents() {
 
     return eventInfo
@@ -102,11 +142,28 @@ function getUpcomingEvents() {
         .filter(isUpcoming)
 
         .sort((a, b) =>
-            new Date(a.date) - new Date(b.date)
+            getEventStart(a) - getEventStart(b)
         );
 
 }
 
+
+// Get Ongoing Events
+
+function getOngoingEvents() {
+
+    return eventInfo
+
+        .filter(isOngoing)
+
+        .sort((a, b) =>
+            getEventStart(a) - getEventStart(b)
+        );
+
+}
+
+
+// Get Previous Events
 
 function getPreviousEvents() {
 
@@ -115,7 +172,7 @@ function getPreviousEvents() {
         .filter(isPrevious)
 
         .sort((a, b) =>
-            new Date(b.date) - new Date(a.date)
+            getEventEnd(b) - getEventEnd(a)
         );
 
 }
@@ -130,12 +187,21 @@ let countdownInterval;
 
 function renderUpcomingEvent() {
 
+    const ongoingEvents = getOngoingEvents();
+
     const upcomingEvents = getUpcomingEvents();
 
-    const event = upcomingEvents[0];
+
+    // Give Priority To Ongoing Event
+
+    const isEventOngoing = ongoingEvents.length > 0;
+
+    const event = isEventOngoing
+        ? ongoingEvents[0]
+        : upcomingEvents[0];
 
 
-    // No upcoming events
+    // No Upcoming Or Ongoing Events
 
     if (!event) {
 
@@ -149,7 +215,6 @@ function renderUpcomingEvent() {
 
     }
 
-    console.log(new Date("2026-10-01T16:00:00").getTime() <= Date.now());
 
     upcomingCard.hidden = false;
 
@@ -163,7 +228,7 @@ function renderUpcomingEvent() {
     eventDate.textContent =
         event.dateText || formatEventDate(event.date);
 
-    eventLocation.textContent = event.location;
+    eventLocation.textContent = event.location || "";
 
     eventDescription.textContent = event.description || "";
 
@@ -191,7 +256,7 @@ function renderUpcomingEvent() {
 
     // Start Countdown
 
-    startEventCountdown(event);
+    startEventCountdown(event, isEventOngoing);
 
 }
 
@@ -200,38 +265,28 @@ function renderUpcomingEvent() {
    COUNTDOWN
 ================================= */
 
-function startEventCountdown(event) {
+function startEventCountdown(event, isEventOngoing = false) {
 
     clearInterval(countdownInterval);
 
 
-    const eventTime = new Date(event.date).getTime();
+    // Target Time
+
+    const targetTime = isEventOngoing
+        ? getEventEnd(event)
+        : getEventStart(event);
 
 
     function updateEventCountdown() {
 
-        const now = Date.now();
-
-        const difference = eventTime - now;
+        const difference = targetTime - Date.now();
 
 
-        // Event Started
+        // Event Status Changed
 
         if (difference <= 0) {
 
-            eventDays.textContent = "00";
-
-            eventHours.textContent = "00";
-
-            eventMinutes.textContent = "00";
-
-            eventSeconds.textContent = "00";
-
-            countdownTitle.textContent = "الحدث بدأ! 🎉";
-
             clearInterval(countdownInterval);
-
-            // Update event classification
 
             renderUpcomingEvent();
 
@@ -275,10 +330,15 @@ function startEventCountdown(event) {
         eventSeconds.textContent =
             String(s).padStart(2, "0");
 
+
+        // Countdown Title
+
+        countdownTitle.textContent = isEventOngoing
+            ? "ينتهي الحدث خلال"
+            : "متبقي على الحدث";
+
     }
 
-
-    countdownTitle.textContent = "متبقي على الحدث";
 
     updateEventCountdown();
 
@@ -295,13 +355,14 @@ function renderPreviousEvents() {
 
     const previousEvents = getPreviousEvents();
 
-    console.log("previous:", previousEvents.length)
+
     // No Previous Events
 
     if (!previousEvents.length) {
 
-        previousEventsList.innerHTML = 
-            `<div class="events-empty">
+        previousEventsList.innerHTML = `
+
+            <div class="events-empty">
 
                 <i class="fas fa-images"></i>
 
@@ -310,8 +371,8 @@ function renderPreviousEvents() {
                 <p>في انتظار المزيد من ذكرياتنا الجميلة ❤️</p>
 
             </div>
-        `;
 
+        `;
         return;
 
     }
@@ -353,18 +414,14 @@ function renderPreviousEvents() {
 
             </div>
 
+
             <a href="${getEventLink(event)}"
-                class="previous-event-link">
-
+               class="previous-event-link">
                 عرض المزيد
-
                 <i class="fas fa-arrow-left"></i>
-
             </a>
-
         </div>
-
-    `).join("");
+`).join("");
 
 }
 
@@ -381,7 +438,7 @@ eventTabs.forEach(tab => {
 
     tab.addEventListener("click", function () {
 
-        // Remove active class
+        // Remove Active Class
 
         eventTabs.forEach(item => {
 
@@ -401,10 +458,16 @@ eventTabs.forEach(tab => {
         // Activate Selected Tab
 
         this.classList.add("active");
-        const selectedTab = this.dataset.tab;
 
-        document.getElementById(selectedTab)
-            .classList.add("active");
+        const selectedTab = this.dataset.tab;
+        const targetContent =
+            document.getElementById(selectedTab);
+
+        if (targetContent) {
+
+            targetContent.classList.add("active");
+
+        }
 
     });
 
@@ -415,6 +478,22 @@ eventTabs.forEach(tab => {
    INITIALIZE EVENTS
 ================================= */
 
+// Render Upcoming / Ongoing Event
+
 renderUpcomingEvent();
 
+
+// Render Previous Events
+
 renderPreviousEvents();
+
+
+// Debugging
+
+console.log("All Events:", eventInfo);
+
+console.log("Upcoming Events:", getUpcomingEvents());
+
+console.log("Ongoing Events:", getOngoingEvents());
+
+console.log("Previous Events:", getPreviousEvents());

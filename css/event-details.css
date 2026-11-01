@@ -118,6 +118,9 @@
     margin-top: 65px;
 }
 
+#detail-description {
+    white-space: pre-line;
+}
 .event-section-heading {
     margin-bottom: 25px;
 }
