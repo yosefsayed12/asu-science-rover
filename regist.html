@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>مسابقة الرسم | ASU Science Rover</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/drawing-competition.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/fonts.css">
+    <style>
+        /* ============================
+   Drawing Competition Page
+============================ */
+
+.drawing-page {
+    background: #150b27;
+    color: #fff;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Navigation */
+
+.drawing-nav {
+    min-height: 70px;
+    padding: 15px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(244, 196, 48, 0.15);
+}
+
+.back-link {
+    color: #c9bddb;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.back-link:hover {
+    color: #F4C430;
+}
+
+.nav-brand {
+    color: #F4C430;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+/* Hero */
+
+.drawing-hero {
+    min-height: 440px;
+    padding: 75px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    position: relative;
+    isolation: isolate;
+    background:
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(94, 58, 158, 0.3),
+            transparent 35%
+        ),
+        linear-gradient(120deg, #150b27, #211533);
+}
+
+.hero-content {
+    max-width: 570px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #F4C430;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    color: #fff;
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.hero-content h1 span {
+    color: #F4C430;
+}
+
+.hero-content p {
+    color: #c9bddb;
+    font-size: 16px;
+    line-height: 2;
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 26px;
+    background: #F4C430;
+    color: #150b27;
+    border-radius: 9px;
+    text-decoration: none;
+    font-weight: 800;
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    background: #ffda57;
+    transform: translateY(-3px);
+}
+
+/* Hero Art */
+
+.hero-art {
+    width: 280px;
+    height: 280px;
+    flex-shrink: 0;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.art-circle {
+    width: 210px;
+    height: 210px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(145deg, #5e3a9e, #37205c);
+    border: 2px solid rgba(244, 196, 48, 0.5);
+    border-radius: 45% 55% 55% 45%;
+    transform: rotate(-12deg);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.art-circle i {
+    color: #F4C430;
+    font-size: 85px;
+    transform: rotate(12deg);
+}
+
+.art-icon {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    display: grid;
+    place-items: center;
+    border-radius: 16px;
+    background: #F4C430;
+    color: #150b27;
+    font-size: 22px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.icon-one {
+    top: 10px;
+    right: 10px;
+    transform: rotate(12deg);
+}
+
+.icon-two {
+    bottom: 15px;
+    left: 0;
+    transform: rotate(-12deg);
+}
+
+.icon-three {
+    bottom: 5px;
+    right: 20px;
+    transform: rotate(10deg);
+}
+
+.hero-decoration {
+    position: absolute;
+    z-index: -1;
+    border: 1px solid rgba(244, 196, 48, 0.08);
+    border-radius: 50%;
+}
+
+.decoration-one {
+    width: 350px;
+    height: 350px;
+    top: -200px;
+    left: 20%;
+}
+
+.decoration-two {
+    width: 250px;
+    height: 250px;
+    bottom: -150px;
+    right: 10%;
+}
+
+/* Section Heading */
+
+.section-heading {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 45px;
+}
+
+.section-heading > span,
+.section-kicker {
+    display: block;
+    color: #F4C430;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.section-heading h2,
+.rules-content h2 {
+    color: #fff;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.section-heading p {
+    color: #aa9bbd;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* Competition Info */
+
+.competition-info {
+    padding: 85px 8%;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.info-card {
+    padding: 30px 25px;
+    background: #211533;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(244, 196, 48, 0.4);
+}
+
+.info-icon {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    background: rgba(244, 196, 48, 0.1);
+    color: #F4C430;
+    border-radius: 14px;
+    font-size: 21px;
+    margin-bottom: 20px;
+}
+
+.info-card h3 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.info-card p {
+    color: #b9accb;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* Rules */
+
+.competition-rules {
+    max-width: 1050px;
+    margin: 0 auto 80px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    background: linear-gradient(120deg, #281b3d, #211533);
+    border: 1px solid rgba(94, 58, 158, 0.5);
+    border-radius: 20px;
+}
+
+.rules-content ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 25px;
+}
+
+.rules-content li {
+    color: #d2c6df;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    font-size: 14px;
+}
+
+.rules-content li i {
+    color: #F4C430;
+}
+
+.rules-art {
+    width: 160px;
+    height: 160px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border: 1px dashed rgba(244, 196, 48, 0.5);
+    border-radius: 50%;
+    color: #F4C430;
+}
+
+.rules-art i {
+    font-size: 50px;
+}
+
+.rules-art span {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+/* Registration */
+
+.registration-section {
+    padding: 85px 20px;
+    background: #1b102d;
+}
+
+.registration-card {
+    max-width: 750px;
+    margin: auto;
+    padding: 40px;
+    background: #211533;
+    border: 1px solid rgba(244, 196, 48, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+#drawing-registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group label {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-group label span {
+    color: #F4C430;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    min-height: 52px;
+    padding: 13px 15px;
+    background: #150b27;
+    border: 1px solid #49375f;
+    border-radius: 10px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-group input::placeholder {
+    color: #81738f;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #F4C430;
+    box-shadow: 0 0 0 3px rgba(244, 196, 48, 0.1);
+}
+
+.form-group select option {
+    background: #211533;
+    color: #fff;
+}
+
+.form-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: #b9accb;
+    font-size: 12px;
+    line-height: 1.8;
+    padding: 13px;
+    background: rgba(94, 58, 158, 0.12);
+    border-radius: 9px;
+}
+
+.form-note i {
+    color: #F4C430;
+    margin-top: 4px;
+}
+
+#submit-registration {
+    min-height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: #F4C430;
+    color: #150b27;
+    border: none;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#submit-registration:hover {
+    background: #ffda57;
+    transform: translateY(-2px);
+}
+
+#submit-registration:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.registration-message {
+    display: none;
+    padding: 14px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.registration-message.success {
+    display: block;
+    background: rgba(46, 204, 113, 0.1);
+    color: #6ee7a0;
+    border: 1px solid rgba(46, 204, 113, 0.3);
+}
+
+.registration-message.error {
+    display: block;
+    background: rgba(231, 76, 60, 0.1);
+    color: #ff8980;
+    border: 1px solid rgba(231, 76, 60, 0.3);
+}
+
+.website-field {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+}
+
+/* Footer */
+
+.drawing-footer {
+    padding: 30px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.drawing-footer p {
+    color: #F4C430;
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.drawing-footer span {
+    color: #8f819f;
+    font-size: 12px;
+}
+
+/* Responsive */
+
+@media (max-width: 800px) {
+
+    .drawing-hero {
+        padding: 65px 7%;
+    }
+
+    .hero-art {
+        width: 210px;
+        height: 210px;
+    }
+
+    .art-circle {
+        width: 160px;
+        height: 160px;
+    }
+
+    .art-circle i {
+        font-size: 65px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .drawing-nav {
+        padding: 15px 5%;
+    }
+
+    .nav-brand {
+        font-size: 10px;
+    }
+
+    .drawing-hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 55px 20px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    .hero-art {
+        margin-top: 15px;
+    }
+
+    .competition-info {
+        padding: 60px 18px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .competition-rules {
+        margin: 0 15px 60px;
+        padding: 25px;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+
+    .rules-art {
+        width: 110px;
+        height: 110px;
+        align-self: center;
+    }
+
+    .rules-art i {
+        font-size: 35px;
+    }
+
+    .registration-section {
+        padding: 60px 15px;
+    }
+
+    .registration-card {
+        padding: 25px 18px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2 {
+        font-size: 25px;
+    }
+
+}
+    </style>
+</head>
+
+<body>
+
+    <main class="drawing-page">
+
+        <!-- Navigation -->
+        <nav class="drawing-nav">
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-right"></i>
+                العودة للموقع
+            </a>
+
+            <span class="nav-brand">ASU SCIENCE ROVER</span>
+        </nav>
+
+        <!-- Hero -->
+        <section class="drawing-hero">
+
+            <div class="hero-decoration decoration-one"></div>
+            <div class="hero-decoration decoration-two"></div>
+
+            <div class="hero-content">
+
+                <span class="hero-label">
+                    <i class="fas fa-palette"></i>
+                    مسابقة فني 
+                </span>
+
+                <h1>
+                    خلّي فنك
+                    <span>يتكلم!</span>
+                </h1>
+
+                <p>
+                    لكل واحد فينا حكاية بيقدر يحكيها بطريقته...
+                    ورينا إبداعك وشاركنا موهبتك في مسابقة الرسم.
+                </p>
+
+                <a href="#registration" class="hero-button">
+                    سجّل مشاركتك
+                    <i class="fas fa-arrow-down"></i>
+                </a>
+
+            </div>
+
+            <div class="hero-art">
+                <div class="art-circle">
+                    <i class="fas fa-palette"></i>
+                </div>
+
+                <span class="art-icon icon-one">
+                    <i class="fas fa-paint-brush"></i>
+                </span>
+
+                <span class="art-icon icon-two">
+                    <i class="fas fa-pencil-alt"></i>
+                </span>
+
+                <span class="art-icon icon-three">
+                    <i class="fas fa-paint-roller"></i>
+                </span>
+            </div>
+
+        </section>
+
+        <!-- Competition Information -->
+        <section class="competition-info">
+
+            <div class="section-heading">
+                <!-- <span>ABOUT THE COMPETITION</span> -->
+                <h2>عن المسابقة</h2>
+                <p>مساحتك للإبداع والتعبير عن نفسك.</p>
+            </div>
+
+            <div class="info-grid">
+
+                <article class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>الفكرة</h3>
+                    <p>
+                        عبّر عن أفكارك ومشاعرك من خلال الرسم،
+                        وخلّي إبداعك يظهر بطريقتك الخاصة.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>المشاركة</h3>
+                    <p>
+                        المشاركة فردية، وكل مشترك يقدر يسجل
+                        بنفسه من خلال النموذج.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>المنافسة</h3>
+                    <p>
+                        فرصة تعرض موهبتك وتشارك إبداعك
+                        مع أبناء العشيرة.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- Rules -->
+        <section class="competition-rules">
+
+            <div class="rules-content">
+                <!-- <span class="section-kicker">BEFORE YOU JOIN</span> -->
+                <h2>قبل ما تشارك</h2>
+                <ul>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        التسجيل فردي.
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        تأكد من إدخال بياناتك بشكل صحيح.
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        سيتم التواصل مع المشاركين لإبلاغهم بالتفاصيل.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="rules-art">
+                <i class="fas fa-paint-brush"></i>
+                <span>CREATE</span>
+            </div>
+
+        </section>
+
+        <!-- Registration -->
+        <section class="registration-section" id="registration">
+
+            <div class="section-heading">
+                <!-- <span>JOIN THE COMPETITION</span> -->
+                <h2>سجّل مشاركتك</h2>
+                <p>
+                    مستنيين نشوف إبداعك!
+                    املأ البيانات التالية لإتمام التسجيل.
+                </p>
+            </div>
+
+            <div class="registration-card">
+
+                <form id="drawing-registration-form">
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="participant-name">
+                                الاسم بالكامل <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="participant-name"
+                                name="name"
+                                placeholder="اكتب اسمك بالكامل"
+                                minlength="3"
+                                maxlength="100"
+                                autocomplete="name"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="participant-phone">
+                                رقم الهاتف <span>*</span>
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="participant-phone"
+                                name="phone"
+                                placeholder="01xxxxxxxxx"
+                                maxlength="20"
+                                autocomplete="tel"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="participant-college">
+                                الكلية <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="participant-college"
+                                name="college"
+                                placeholder="اكتب اسم الكلية"
+                                maxlength="100"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="participant-year">
+                                الفرقة الدراسية <span>*</span>
+                            </label>
+
+                            <select
+                                id="participant-year"
+                                name="academicYear"
+                                required
+                            >
+                                <option value="">اختر الفرقة</option>
+                                <option value="الأولى">الأولى</option>
+                                <option value="الثانية">الثانية</option>
+                                <option value="الثالثة">الثالثة</option>
+                                <option value="الرابعة">الرابعة</option>
+                                <option value="خريج">خريج</option>
+                                <option value="أخرى">أخرى</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="participant-college">
+                                هل انت فرد من العشيرة؟ <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="participant-college"
+                                name="member"
+                                placeholder="اه | لا"
+                                maxlength="100"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="participant-college">
+                                القسم <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="participant-college"
+                                name="program"
+                                placeholder="مثال: علوم الحاسب"
+                                maxlength="100"
+                                required
+                            >
+                        </div>
+                    </div>
+                    <!-- Honeypot -->
+                    <div class="website-field" aria-hidden="true">
+                        <label for="website">Website</label>
+                        <input
+                            type="text"
+                            id="website"
+                            name="website"
+                            tabindex="-1"
+                            autocomplete="off"
+                        >
+                    </div>
+
+                    <div class="form-note">
+                        <i class="fas fa-info-circle"></i>
+                        برجاء التأكد من صحة رقم الهاتف، حيث سيتم التواصل معك من خلاله.
+                    </div>
+
+                    <button type="submit" id="submit-registration">
+                        <span>تأكيد التسجيل</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+
+                    <div
+                        id="registration-message"
+                        class="registration-message"
+                        role="status"
+                        aria-live="polite"
+                    ></div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+        <!-- Footer -->
+        <footer class="drawing-footer">
+            <p>عشيرة جوالة كلية العلوم جامعة عين شمس</p>
+            <span>الإبداع يبدأ بفكرة ❤️</span>
+        </footer>
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+const form = document.getElementById("drawing-registration-form");
+const message = document.getElementById("registration-message");
+const submitButton = document.getElementById("submit-registration");
+
+// Backend API
+// Replace this URL with your actual backend endpoint.
+const API_URL = "https://asu-science-rover-3o4z.vercel.app/api/registration";
+
+// Competition information
+const COMPETITION_ID = "drawing-competition";
+
+// Show message
+function showMessage(text, type) {
+    message.textContent = text;
+    message.className = `registration-message ${type}`;
+}
+
+// Submit form
+form.addEventListener("submit", async (e) => {
+
+    e.preventDefault();
+
+    // Honeypot check (basic bot filtering)
+    const website = document.getElementById("website");
+
+    if (website.value.trim() !== "") {
+        return;
+    }
+
+    // Get form data
+    const formData = new FormData(form);
+
+    const registrationData = {
+        eventId: COMPETITION_ID,
+        name: formData.get("name").trim(),
+        phone: formData.get("phone").trim(),
+        college: formData.get("college").trim(),
+        academicYear: formData.get("academicYear"),
+        isMember: formData.get("member"),
+        program: formData.get("program")
+    };
+
+    // Validate phone
+    if (!/^[0-9+\-\s()]{8,20}$/.test(registrationData.phone)) {
+        showMessage("من فضلك أدخل رقم هاتف صحيح.", "error");
+        return;
+    }
+
+    // Disable button
+    submitButton.disabled = true;
+    submitButton.querySelector("span").textContent = "جاري التسجيل...";
+
+    message.className = "registration-message";
+    message.textContent = "";
+
+    try {
+
+        const response = await fetch(API_URL, {
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify(registrationData)
+        });
+
+        const result = await response.json().catch(() => ({}));
+
+        if (!response.ok) {
+            throw new Error(
+                result.message || "حدث خطأ أثناء التسجيل."
+            );
+        }
+
+        showMessage(
+            result.message || "تم تسجيل مشاركتك بنجاح! بالتوفيق ❤️",
+            "success"
+        );
+
+        form.reset();
+
+        submitButton.querySelector("span").textContent =
+            "تم التسجيل بنجاح";
+
+        // Keep the button disabled after successful registration
+        // to prevent accidental duplicate submissions.
+
+    } catch (error) {
+
+        console.error("Registration Error:", error);
+
+        showMessage(
+            error.message || "تعذر الاتصال بالخادم، حاول مرة أخرى.",
+            "error"
+        );
+
+        submitButton.disabled = false;
+
+        submitButton.querySelector("span").textContent =
+            "تأكيد التسجيل";
+    }
+
+});
+
+});
+    </script>
+
+</body>
+</html>

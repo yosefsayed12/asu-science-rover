@@ -4,6 +4,7 @@ const cors = require("cors");
 const aiRoutes = require("./routes/aiRoutes");
 const telegramRoutes = require("./routes/telegramRoute");
 const joinRoutes = require("./routes/joinRoute");
+const registration = require("./routes/competitionRoute");
 
 const app = express();
 
@@ -29,6 +30,7 @@ app.use(express.json());
 app.use("/api/ai", aiRoutes);
 app.use("/api/telegram", telegramRoutes);
 app.use("/api/join", joinRoutes);
+app.use("/api/registration", registration);
 
 
 // ========================================

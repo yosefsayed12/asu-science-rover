@@ -1,260 +1,531 @@
-.upcoming-event {
-    position: relative;
-    width: 100%;
-    padding: 80px 0px;
-    background: #1c1029;
-    overflow: hidden;
-    border-top: 2px solid #c79a32;
-    border-bottom: 2px solid #c79a32;
+/* =================================
+   EVENTS SECTION
+================================= */
+
+.events-section {
+    padding: 80px 20px;
+    background: #150b27;
+    color: #fff;
+    direction: rtl;
 }
 
-
-
-.upcoming-event::before {
-    content: "";
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #c79a32;
-    opacity: 0.025;
-    filter: blur(100px);
-    border-radius: 50%;
-    pointer-events: none;
-}
-
-
-
-.upcoming-event .section-title {
-    position: relative;
-    text-align: center;
-    margin-bottom: 45px;
-}
-
-.upcoming-event .section-title h2 {
-    margin: 0;
-    color: #ffffff;
-    font-size: 42px;
-    font-weight: 700;
-}
-
-.upcoming-event .section-title span {
-    display: block;
-    width: 120px;
-    height: 2px;
-    margin: 10px auto 12px;
-    background: #c79a32;
-}
-
-.upcoming-event .section-title p {
-    margin: 0;
-    color: #aaa1b0;
-    font-size: 15px;
-}
-
-
-
-.upcoming-content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    max-width: 700px;
+.events-container {
+    max-width: 1100px;
     margin: auto;
 }
 
+/* Section Heading */
 
-
-/* .upcoming-icon {
-    width: 65px;
-    height: 65px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 15px;
-    border: 1px solid rgba(199, 154, 50, 0.45);
-    border-radius: 50%;
-    background: rgba(199, 154, 50, 0.05);
-    font-size: 30px;
-    box-shadow: 0 0 25px rgba(199, 154, 50, 0.08);
-} */
-
-
-
-#upcoming-event-name {
-    margin: 0 0 15px;
-    color: #ffffff;
-    font-size: 28px;
-    font-weight: 700;
-}
-
-
-/* -----------------------------------------------
-   Event Details
------------------------------------------------- */
-
-.upcoming-details {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 25px;
-    color: #bdb4c3;
-    font-size: 14px;
+.events-section .section-title {
+    text-align: center;
     margin-bottom: 35px;
 }
 
-.upcoming-details span {
-    display: inline-flex;
+.events-subtitle {
+    color: #F4C430;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.events-section .section-title h2 {
+    color: #fff;
+    font-size: 36px;
+    margin: 12px 0;
+}
+
+.events-section .section-title p {
+    color: #b9accb;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* =================================
+   TOGGLE TABS
+================================= */
+
+.events-tabs {
+    display: flex;
+    justify-content: center;
     align-items: center;
+    width: fit-content;
+    margin: 0 auto 35px;
+    padding: 5px;
+    background: #241637;
+    border: 1px solid #38264f;
+    border-radius: 50px;
     gap: 5px;
 }
 
-
-/* -----------------------------------------------
-   Countdown Title
------------------------------------------------- */
-
-.countdown-title {
-    color: #c79a32;
-    font-size: 16px;
+.event-tab {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #c5b8d5;
+    padding: 12px 28px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: inherit;
     font-weight: 600;
-    margin-bottom: 15px;
+    transition: 0.3s ease;
+}
+
+.event-tab i {
+    margin-left: 7px;
+}
+
+.event-tab:hover {
+    color: #F4C430;
+}
+
+.event-tab.active {
+    background: #F4C430;
+    color: #150b27;
 }
 
 
-/* -----------------------------------------------
-   Countdown
------------------------------------------------- */
+/* =================================
+   CONTENT SWITCHING
+================================= */
+
+.events-content {
+    display: none;
+    animation: eventsFade 0.4s ease;
+}
+
+.events-content.active {
+    display: block;
+}
+
+@keyframes eventsFade {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =================================
+   UPCOMING EVENT CARD
+================================= */
+
+.upcoming-card {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    background: #211533;
+    border: 1px solid #38264f;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.upcoming-card:hover {
+    border-color: #F4C430;
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Event Image */
+
+.upcoming-image {
+    min-height: 400px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #49316a, #211533);
+}
+
+.upcoming-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    object-fit: cover;
+    display: block;
+    transition: 0.5s ease;
+}
+
+.upcoming-card:hover .upcoming-image img {
+    transform: scale(1.04);
+}
+
+
+/* Event Information */
+
+.upcoming-content {
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.event-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(244, 196, 48, 0.12);
+    color: #F4C430;
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+.upcoming-content h3 {
+    font-size: 27px;
+    color: #F4C430;
+    margin: 0 0 12px;
+    line-height: 1.6;
+}
+
+.upcoming-description {
+    color: #c5b8d5;
+    line-height: 1.9;
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+
+/* Event Details */
+
+.upcoming-details {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.upcoming-details > span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #eee;
+    font-size: 14px;
+}
+
+.upcoming-details i {
+    color: #F4C430;
+    width: 18px;
+}
+
+
+/* =================================
+   COUNTDOWN
+================================= */
+
+.countdown-wrapper {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.countdown-title {
+    color: #c5b8d5;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
 
 .upcoming-countdown {
     display: flex;
     align-items: center;
-    justify-content: center;
-    direction: ltr;
-    margin-bottom: 35px;
+    gap: 10px;
 }
-
-
-/* Each number */
 
 .countdown-unit {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 6px;
+    justify-content: center;
+    background: #2d1d43;
+    border: 1px solid #49316a;
+    border-radius: 10px;
+    width: 65px;
+    height: 70px;
 }
-
-
-/* Number */
 
 .countdown-unit span {
-    color: #ffffff;
-    font-size: 35px;
+    font-size: 23px;
+    color: #F4C430;
     font-weight: 700;
-    line-height: 1;
-    min-width: 35px;
-    text-align: center;
+    font-variant-numeric: tabular-nums;
 }
-
-
-/* Unit name */
 
 .countdown-unit small {
-    color: #9e94a5;
-    font-size: 15px;
-    font-weight: 400;
-
+    color: #b9accb;
+    font-size: 11px;
+    margin-top: 4px;
 }
-
-
-/* Colon */
 
 .countdown-colon {
-    color: #c79a32;
-    font-size: 28px;
-    font-weight: 700;
-    margin: 0 10px;
-    transform: translateY(-1px);
+    color: #F4C430;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 
+/* =================================
+   UPCOMING BUTTON
+================================= */
 
 .upcoming-button {
     display: inline-flex;
-    display: none;
     align-items: center;
     justify-content: center;
-    padding: 11px 28px;
-    background: #c79a32;
-    color: #17101f;
-    border-radius: 25px;
+    gap: 10px;
+    padding: 13px 25px;
+    background: #F4C430;
+    color: #150b27;
     text-decoration: none;
-    font-size: 16px;
+    border-radius: 8px;
+    font-size: 14px;
     font-weight: 700;
     transition: 0.3s ease;
 }
 
 .upcoming-button:hover {
-    background: #e0b84f;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(199, 154, 50, 0.18);
+    background: #fff;
+    color: #150b27;
+    transform: translateY(-3px);
 }
 
 
-/* =================================================
-   MOBILE
-================================================= */
+/* =================================
+   PREVIOUS EVENTS
+================================= */
 
-@media (max-width: 600px) {
-    .upcoming-event {
-        padding: 70px 0px;
+.previous-events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.previous-event-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    background: #211533;
+    border: 1px solid #38264f;
+    border-radius: 14px;
+    transition: 0.3s ease;
+}
+
+.previous-event-card:hover {
+    border-color: #F4C430;
+    transform: translateX(-5px);
+}
+
+
+/* Previous Event Image */
+
+.previous-event-image {
+    width: 115px;
+    height: 95px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #49316a;
+}
+
+.previous-event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Previous Event Info */
+
+.previous-event-info {
+    flex: 1;
+}
+
+.previous-event-info h3 {
+    font-size: 17px;
+    margin: 0 0 10px;
+    color: #fff;
+}
+
+.previous-event-info span {
+    font-size: 13px;
+    color: #b9accb;
+}
+
+.previous-event-info i {
+    color: #F4C430;
+    margin-left: 5px;
+}
+
+
+/* Previous Event Link */
+
+.previous-event-link {
+    color: #F4C430;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.previous-event-link:hover {
+    color: #fff;
+}
+
+
+/* =================================
+   ALL EVENTS BUTTON
+================================= */
+
+.all-events-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin: 30px auto 0;
+    padding: 13px 28px;
+    border: 1px solid #F4C430;
+    border-radius: 8px;
+    color: #F4C430;
+    text-decoration: none;
+    gap: 12px;
+    transition: 0.3s ease;
+}
+
+.all-events-btn:hover {
+    background: #F4C430;
+    color: #150b27;
+}
+
+
+/* =================================
+   EMPTY STATE
+================================= */
+
+.events-empty {
+    text-align: center;
+    padding: 45px 20px;
+    color: #b9accb;
+    background: #211533;
+    border: 1px solid #38264f;
+    border-radius: 15px;
+}
+
+.events-empty[hidden] {
+    display: none;
+}
+
+.events-empty i {
+    color: #F4C430;
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.events-empty h3 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 768px) {
+
+    .events-section {
+        padding: 60px 15px;
     }
 
-    .upcoming-event .section-title h2 {
-        font-size: 27px;
+    .events-section .section-title h2 {
+        font-size: 28px;
     }
 
-    .upcoming-event .section-title p {
-        font-size: 12px;
+    .upcoming-card {
+        grid-template-columns: 1fr;
     }
 
-    #upcoming-event-name {
+    .upcoming-image {
+        height: 240px;
+        min-height: auto;
+    }
+
+    .upcoming-image img {
+        min-height: 240px;
+        height: 240px;
+    }
+
+    .upcoming-content {
+        padding: 25px 20px;
+    }
+
+    .upcoming-content h3 {
         font-size: 23px;
     }
 
-    .upcoming-details {
-        flex-direction: column;
-        gap: 8px;
-        margin-bottom: 30px;
-    }
-
-    .upcoming-countdown {
-        width: 100%;
-        gap: 0;
+    .event-tab {
+        padding: 11px 20px;
+        font-size: 13px;
     }
 
     .countdown-unit {
-        gap: 3px;
+        width: 58px;
+        height: 65px;
     }
 
     .countdown-unit span {
-        font-size: 21px;
-        min-width: 27px;
-    }
-
-    .countdown-unit small {
-        font-size: 9px;
-    }
-
-    .countdown-colon {
         font-size: 20px;
-        margin: 0 4px;
     }
 
-    .upcoming-button {
-        padding: 10px 25px;
+    .previous-event-card {
+        gap: 12px;
+        padding: 10px;
+    }
+
+    .previous-event-image {
+        width: 85px;
+        height: 80px;
+    }
+
+    .previous-event-info h3 {
+        font-size: 14px;
+    }
+
+    .previous-event-link {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .events-tabs {
+        width: 100%;
+    }
+
+    .event-tab {
+        flex: 1;
+        padding: 11px 8px;
+    }
+
+    .upcoming-countdown {
+        gap: 5px;
+        justify-content: space-between;
+    }
+
+    .countdown-unit {
+        width: 55px;
+    }
+
+    .previous-event-card {
+        flex-wrap: wrap;
+    }
+
+    .previous-event-link {
+        margin-right: auto;
     }
 }

@@ -88,91 +88,159 @@
                 </p>
             </div>
         </section>
-<section class="upcoming-event" id="upcoming-event">
+        <section class="events-section" id="events">
 
-    <div class="section-title">
-        <h2>الحدث القادم</h2>
-        <!-- <span></span> -->
-        <p>استعدوا للحدث القادم مع عشيرة جوالة كلية العلوم</p>
+            <div class="events-container">
+        
+                <!-- Section Heading -->
+                <div class="section-title">
+                    <span class="events-subtitle">ASU SCIENCE ROVER</span>
+                    <h2>فعاليات العشيرة</h2>
+                    <p>استعدوا للفعاليات القادمة واسترجعوا أجمل ذكرياتنا سوا ❤️</p>
+                </div>
+        
+                <!-- Events Toggle -->
+                <div class="events-tabs">
+        
+                    <button class="event-tab active"
+                            data-tab="upcoming">
+                        <i class="fas fa-calendar-check"></i>
+                        الحدث القادم
+                    </button>
+        
+                    <button class="event-tab"
+                            data-tab="previous">
+                        <i class="fas fa-clock-rotate-left"></i>
+                        الأحداث السابقة
+                    </button>
+        
+                </div>
+        
+        
+                <!-- =========================
+                     UPCOMING EVENT
+                ========================== -->
+        
+                <div class="events-content active" id="upcoming">
+        
+                    <div class="upcoming-card" id="upcomingEventCard">
+        
+                        <!-- Event Image -->
+                        <div class="upcoming-image">
+                            <img id="upcoming-event-image"
+                                 src=""
+                                 alt="صورة الحدث القادم">
+                        </div>
+        
+                        <!-- Event Content -->
+                        <div class="upcoming-content">
+        
+                            <span class="event-status">
+                                <i class="fas fa-star"></i>
+                                الحدث القادم
+                            </span>
+        
+                            <!-- Event Name -->
+                            <h3 id="upcoming-event-name"></h3>
+        
+                            <!-- Event Description -->
+                            <p class="upcoming-description"
+                               id="upcoming-event-description"></p>
+        
+                            <!-- Event Details -->
+                            <div class="upcoming-details">
+        
+                                <span>
+                                    <i class="fas fa-calendar-days"></i>
+                                    <span id="upcoming-event-date"></span>
+                                </span>
+        
+                                <span>
+                                    <i class="fas fa-location-dot"></i>
+                                    <span id="upcoming-event-location"></span>
+                                </span>
+        
+                            </div>
+        
+                            <!-- Countdown -->
+                            <div class="countdown-wrapper">
+        
+                                <div class="countdown-title">
+                                    متبقي على الحدث
+                                </div>
+        
+                                <div class="upcoming-countdown">
+        
+                                    <div class="countdown-unit">
+                                        <span id="event-days">00</span>
+                                        <small>يوم</small>
+                                    </div>
+        
+                                    <span class="countdown-colon">:</span>
+        
+                                    <div class="countdown-unit">
+                                        <span id="event-hours">00</span>
+                                        <small>ساعة</small>
+                                    </div>
+        
+                                    <span class="countdown-colon">:</span>
+        
+                                    <div class="countdown-unit">
+                                        <span id="event-minutes">00</span>
+                                        <small>دقيقة</small>
+                                    </div>
+        
+                                    <span class="countdown-colon">:</span>
+        
+                                    <div class="countdown-unit">
+                                        <span id="event-seconds">00</span>
+                                        <small>ثانية</small>
+                                    </div>
+        
+                                </div>
+        
+                            </div>
+        
+                            <!-- Event Button -->
+                            <a href="#"
+                               class="upcoming-button"
+                               id="upcoming-event-button">
+                                عرض التفاصيل
+                                <i class="fas fa-arrow-left"></i>
+                            </a>
+        
+                        </div>
+                    </div>    
+                    <!-- No Upcoming Events -->
+            <div class="events-empty" id="noUpcomingEvents" hidden>
+                <i class="fas fa-calendar-xmark"></i>
+                <h3>لا توجد أحداث قادمة حاليًا</h3>
+                <p>ترقبوا فعالياتنا القادمة ❤️</p>
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             PREVIOUS EVENTS
+        ========================== -->
+
+        <div class="events-content" id="previous">
+
+            <div class="previous-events-list"
+                 id="previousEventsList">
+            </div>
+
+            <!-- Show All Events -->
+            <a href="events.html"
+               class="all-events-btn">
+                عرض كل الأحداث السابقة
+                <i class="fas fa-arrow-left"></i>
+            </a>
+
+        </div>
+
     </div>
-
-
-    <div class="upcoming-content">
-        <!-- <div class="upcoming-icon">
-            🏕️
-        </div> -->
-
-        <!-- Event Name -->
-        <h3 id="upcoming-event-name">
-            <!-- حفل تسليم قيادة العشيرة -->
-        </h3>
-
-
-        <!-- Event Details -->
-        <div class="upcoming-details">
-
-            <span>
-                📅
-                <span id="upcoming-event-date">
-                    10 سبتمبر 2026
-                </span>
-            </span>
-
-            <span>
-                📍
-                <span id="upcoming-event-location">
-                    كلية العلوم - جامعة عين شمس
-                </span>
-            </span>
-
-        </div>
-
-
-        <!-- Countdown Title -->
-        <div class="countdown-title">
-            متبقي على الحدث
-        </div>
-
-
-        <!-- Countdown -->
-        <div class="upcoming-countdown">
-
-            <div class="countdown-unit">
-                <span id="event-days">00</span>
-                <small>يوم</small>
-            </div>
-
-            <span class="countdown-colon">:</span>
-
-            <div class="countdown-unit">
-                <span id="event-hours">00</span>
-                <small>ساعة</small>
-            </div>
-
-            <span class="countdown-colon">:</span>
-
-            <div class="countdown-unit">
-                <span id="event-minutes">00</span>
-                <small>دقيقة</small>
-            </div>
-
-            <span class="countdown-colon">:</span>
-
-            <div class="countdown-unit">
-                <span id="event-seconds">00</span>
-                <small>ثانية</small>
-            </div>
-
-        </div>
-
-
-        <!-- Button -->
-        <a href="#" class="upcoming-button" id="upcoming-event-button">
-            تفاصيل الحدث
-        </a>
-
-    </div>
-</section>    
     </section>
         <section class="gallery" id="gallery">
             <div class="section-title">
@@ -420,6 +488,7 @@
 </div>
     <script src="js/main.js"></script>
     <script src="js/ai-chat.js"></script>
+    <script src="js/event-data.js"></script>
     <script src="js/up-event.js"></script>
 </body>
 </html>

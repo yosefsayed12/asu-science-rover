@@ -1,19 +1,8 @@
-const upcomingEvents =[
-    {
-        name: "حــفل تسليــم قيــادة العشــيرة",
-        date: "2026-10-01T16:00:00",
-        dateText: "1 أكتوبر 2026",
-        location: "مدرج نوح - كلية العلوم - جامعة عين شمس",
-        link: "#",
-        duration: "7"
-    }
-];
+const eventInfo = window.eventsData;
 
-const now = new Date().getTime();
-
-const upcomingEvent = upcomingEvents
-    // .filter(event => new Date(event.date).getTime() > now)
-    .sort( (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())[0];
+/* =================================
+   DOM ELEMENTS
+================================= */
 
 const eventName =
     document.getElementById("upcoming-event-name");
@@ -24,112 +13,408 @@ const eventDate =
 const eventLocation =
     document.getElementById("upcoming-event-location");
 
+const eventDescription =
+    document.getElementById("upcoming-event-description");
+
+const eventImage =
+    document.getElementById("upcoming-event-image");
+
 const eventButton =
     document.getElementById("upcoming-event-button");
 
-const days =
+const eventDays =
     document.getElementById("event-days");
 
-const hours =
+const eventHours =
     document.getElementById("event-hours");
 
-const minutes =
+const eventMinutes =
     document.getElementById("event-minutes");
 
-const seconds =
+const eventSeconds =
     document.getElementById("event-seconds");
 
-/* ---------- Event Information ---------- */
-eventName.textContent = upcomingEvent.name;
+const countdownTitle =
+    document.querySelector(".countdown-title");
 
-eventDate.textContent = upcomingEvent.dateText;
+const upcomingCard =
+    document.getElementById("upcomingEventCard");
 
-eventLocation.textContent = upcomingEvent.location;
+const noUpcomingEvents =
+    document.getElementById("noUpcomingEvents");
 
-eventButton.href = upcomingEvent.link;
-
-
-/* ----------------- Countdown -------------------- */
-
-const eventTime =
-    new Date(upcomingEvent.date).getTime();
-
-function updateEventCountdown() {
-
-    const now =
-        new Date().getTime();
-
-    const difference =
-        eventTime - now;
+const previousEventsList =
+    document.getElementById("previousEventsList");
 
 
-    /* Event Started */
+/* =================================
+   HELPER FUNCTIONS
+================================= */
 
-    if (difference <= 0) {
+// Format event date
 
-        days.textContent = "00";
+function formatEventDate(date) {
 
-        hours.textContent = "00";
+    return new Date(date).toLocaleDateString("ar-EG", {
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+    });
 
-        minutes.textContent = "00";
+}
 
-        seconds.textContent = "00";
 
-        document.querySelector(".countdown-title").textContent = "الحدث بدأ! 🎉";
+// Get event link
+
+function getEventLink(event) {
+
+    return event.link || `event.html?id=${encodeURIComponent(event.id)}`;
+
+}
+
+
+// Check if event is upcoming
+
+function isUpcoming(event) {
+
+    return new Date(event.date).getTime() > Date.now();
+
+}
+
+
+// Check if event is previous
+
+function isPrevious(event) {
+
+    return new Date(event.date).getTime() <= Date.now();
+
+}
+
+
+/* =================================
+   SORT EVENTS
+================================= */
+
+function getUpcomingEvents() {
+
+    return eventInfo
+
+        .filter(isUpcoming)
+
+        .sort((a, b) =>
+            new Date(a.date) - new Date(b.date)
+        );
+
+}
+
+
+function getPreviousEvents() {
+
+    return eventInfo
+
+        .filter(isPrevious)
+
+        .sort((a, b) =>
+            new Date(b.date) - new Date(a.date)
+        );
+
+}
+
+
+/* =================================
+   UPCOMING EVENT
+================================= */
+
+let countdownInterval;
+
+
+function renderUpcomingEvent() {
+
+    const upcomingEvents = getUpcomingEvents();
+
+    const event = upcomingEvents[0];
+
+
+    // No upcoming events
+
+    if (!event) {
+
+        upcomingCard.hidden = true;
+
+        noUpcomingEvents.hidden = false;
+
+        clearInterval(countdownInterval);
+
+        return;
+
+    }
+
+    console.log(new Date("2026-10-01T16:00:00").getTime() <= Date.now());
+
+    upcomingCard.hidden = false;
+
+    noUpcomingEvents.hidden = true;
+
+
+    // Event Information
+
+    eventName.textContent = event.name;
+
+    eventDate.textContent =
+        event.dateText || formatEventDate(event.date);
+
+    eventLocation.textContent = event.location;
+
+    eventDescription.textContent = event.description || "";
+
+
+    // Event Image
+
+    if (event.image) {
+
+        eventImage.src = event.image;
+
+        eventImage.style.display = "block";
+
+    } else {
+
+        eventImage.removeAttribute("src");
+        eventImage.style.display = "none";
+
+    }
+
+
+    // Event Button
+
+    eventButton.href = getEventLink(event);
+
+
+    // Start Countdown
+
+    startEventCountdown(event);
+
+}
+
+
+/* =================================
+   COUNTDOWN
+================================= */
+
+function startEventCountdown(event) {
+
+    clearInterval(countdownInterval);
+
+
+    const eventTime = new Date(event.date).getTime();
+
+
+    function updateEventCountdown() {
+
+        const now = Date.now();
+
+        const difference = eventTime - now;
+
+
+        // Event Started
+
+        if (difference <= 0) {
+
+            eventDays.textContent = "00";
+
+            eventHours.textContent = "00";
+
+            eventMinutes.textContent = "00";
+
+            eventSeconds.textContent = "00";
+
+            countdownTitle.textContent = "الحدث بدأ! 🎉";
+
+            clearInterval(countdownInterval);
+
+            // Update event classification
+
+            renderUpcomingEvent();
+
+            renderPreviousEvents();
+
+            return;
+
+        }
+
+
+        // Calculate Time
+
+        const d = Math.floor(
+            difference / (1000 * 60 * 60 * 24)
+        );
+
+        const h = Math.floor(
+            (difference / (1000 * 60 * 60)) % 24
+        );
+
+        const m = Math.floor(
+            (difference / (1000 * 60)) % 60
+        );
+
+        const s = Math.floor(
+            (difference / 1000) % 60
+        );
+
+
+        // Display Time
+
+        eventDays.textContent =
+            String(d).padStart(2, "0");
+
+        eventHours.textContent =
+            String(h).padStart(2, "0");
+
+        eventMinutes.textContent =
+            String(m).padStart(2, "0");
+
+        eventSeconds.textContent =
+            String(s).padStart(2, "0");
+
+    }
+
+
+    countdownTitle.textContent = "متبقي على الحدث";
+
+    updateEventCountdown();
+
+    countdownInterval = setInterval(updateEventCountdown, 1000);
+
+}
+
+
+/* =================================
+   PREVIOUS EVENTS
+================================= */
+
+function renderPreviousEvents() {
+
+    const previousEvents = getPreviousEvents();
+
+    console.log("previous:", previousEvents.length)
+    // No Previous Events
+
+    if (!previousEvents.length) {
+
+        previousEventsList.innerHTML = 
+            `<div class="events-empty">
+
+                <i class="fas fa-images"></i>
+
+                <h3>لا توجد أحداث سابقة حتى الآن</h3>
+
+                <p>في انتظار المزيد من ذكرياتنا الجميلة ❤️</p>
+
+            </div>
+        `;
 
         return;
 
     }
 
 
-    /* Calculate */
+    // Show Latest 3 Events
 
-    const d =
-        Math.floor(
-            difference / (1000 * 60 * 60 * 24)
-        );
+    const latestEvents = previousEvents.slice(0, 3);
 
 
-    const h =
-        Math.floor(
-            (difference / (1000 * 60 * 60)) % 24
-        );
+    previousEventsList.innerHTML = latestEvents.map(event => `
+
+        <div class="previous-event-card">
+
+            <div class="previous-event-image">
+
+                ${
+                    event.image
+                    ? `<img src="${event.image}"
+                            alt="${event.name}"
+                            onerror="this.style.display='none'">`
+                    : `<i class="fas fa-camera"></i>`
+                }
+
+            </div>
 
 
-    const m =
-        Math.floor(
-            (difference / (1000 * 60)) % 60
-        );
+            <div class="previous-event-info">
 
+                <h3>${event.name}</h3>
 
-    const s =
-        Math.floor(
-            (difference / 1000) % 60
-        );
+                <span>
 
+                    <i class="fas fa-calendar-alt"></i>
 
-    /* Display */
+                    ${event.dateText || formatEventDate(event.date)}
 
-    days.textContent =
-        String(d).padStart(2, "0");
+                </span>
 
-    hours.textContent =
-        String(h).padStart(2, "0");
+            </div>
 
-    minutes.textContent =
-        String(m).padStart(2, "0");
+            <a href="${getEventLink(event)}"
+                class="previous-event-link">
 
-    seconds.textContent =
-        String(s).padStart(2, "0");
+                عرض المزيد
+
+                <i class="fas fa-arrow-left"></i>
+
+            </a>
+
+        </div>
+
+    `).join("");
 
 }
 
 
-/* Run immediately */
+/* =================================
+   TAB SWITCHING
+================================= */
 
-updateEventCountdown();
+const eventTabs =
+    document.querySelectorAll(".event-tab");
 
 
-/* Update every second */
+eventTabs.forEach(tab => {
 
-setInterval(updateEventCountdown, 1000);
+    tab.addEventListener("click", function () {
+
+        // Remove active class
+
+        eventTabs.forEach(item => {
+
+            item.classList.remove("active");
+
+        });
+
+
+        document.querySelectorAll(".events-content")
+            .forEach(content => {
+
+                content.classList.remove("active");
+
+            });
+
+
+        // Activate Selected Tab
+
+        this.classList.add("active");
+        const selectedTab = this.dataset.tab;
+
+        document.getElementById(selectedTab)
+            .classList.add("active");
+
+    });
+
+});
+
+
+/* =================================
+   INITIALIZE EVENTS
+================================= */
+
+renderUpcomingEvent();
+
+renderPreviousEvents();
