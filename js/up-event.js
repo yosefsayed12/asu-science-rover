@@ -206,7 +206,7 @@ function renderUpcomingEvent() {
     if (!event) {
 
         upcomingCard.hidden = true;
-
+        upcomingCard.style.display = "none";
         noUpcomingEvents.hidden = false;
 
         clearInterval(countdownInterval);
